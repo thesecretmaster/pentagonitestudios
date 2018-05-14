@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<!--Started with the "Startup Template" on w3schools.com, heavily modified by first_name last_name -->
+
+<html>
+<title>Pentagonite Studios</title>
+<link rel="icon" href="/Pictures/Logo_favicon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/MainStyle.css">
+<link href="https://fonts.googleapis.com/css?family=Hind+Vadodara" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Hind Vadodara", sans-serif}
+body, html {
+    height: 100%;
+    line-height: 1.8;
+}
+
+/*Image header */
+.bgimg-1 {
+    background-position: center;
+    background-size: cover;
+    background-image: url("/Pictures/Main_banner.jpg");
+    min-height: 75%;
+}
+.w3-bar .w3-button {
+    padding: 16px;
+}
+
+/*contacted box */
+.contacted-box {
+	padding: 16px;
+	max-width: 50%;
+	opacity: 0.3;
+}
+
+</style>
+<body class = "pentagonite-dark">
+
+<!-- Navbar (sit on top) -->
+<div id="NavBar" class="w3-bar pentagonite-dark">
+  <a href="index.html" class="w3-bar-item w3-button w3-wide logoback" style="padding-left: 90px">Pentagonite Studios</a>
+  <!-- Right-sided navbar links -->
+  <div class="w3-right w3-hide-small">
+    <a href="/index.html#about" class="w3-bar-item w3-button">About Me</a>
+    <a href="/Gallery.html" class="w3-bar-item w3-button">Gallery</a>
+    <a href="/Store.html" class="w3-bar-item w3-button">Store</a>
+    <a href="/index.html#contact" class="w3-bar-item w3-button">Contact</a>
+    <a href="/Blog.html" class="w3-bar-item w3-button">Blog</a>
+  </div>
+  <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block pentagonite-dark w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close</a>
+  <a href="/index.html#about" class="w3-bar-item w3-button">About Me</a>
+  <a href="/Gallery.html" class="w3-bar-item w3-button">Gallery</a>
+  <a href="/Store.html" class="w3-bar-item w3-button">Store</a>
+  <a href="/index.html#contact" class="w3-bar-item w3-button">Contact</a>
+  <a href="/Blog.html" class="w3-bar-item w3-button">Blog</a>
+</nav>
+
+<!-- Message Section -->
+<div class="w3-container bgimg-1" style="padding:64px 16px; min-height: 75%; padding-top: 200px!important " id="404">
+	<h3 class="w3-center w3-jumbo">404.</h3>
+	<p class="w3-center w3-large">Oh noes! This page does not exist! Should it? <a href="/index.html#contact">contact</a> me!</p>
+	<p class="w3-center"><a href="/index.html" class="w3-button pentagonite-darkish">Return to Main</a></p>
+</div>
+ 
+<!-- Footer -->
+<footer class="w3-center pentagonite-dark" style="padding-top: 0; padding-bottom: 3%">
+  <div class="w3-xlarge w3-section">
+    <a href="https://www.facebook.com/pentagonitestudios"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+    <a href="https://twitter.com/PentagoniteStdo"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+    <a href="https://www.instagram.com/gemhunterdoesart/"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+    <!--<i class="fa fa-snapchat w3-hover-opacity"></i>-->
+    <a href="https://gemhunter178.deviantart.com/"><i class="fa fa-deviantart w3-hover-opacity"></i></a>
+    <!--<i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>-->
+  </div>
+  <p>Template from <a href="https://www.w3schools.com" title="W3.CSS" target="_blank" class="pentagoniteblue-text-hover">w3schools.com</a>, edited and adapted by first_name last_name</p>
+</footer>
+
+<script>
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+    } else {
+        mySidebar.style.display = 'block';
+    }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+</script>
+<!-- Extra scripts added by me -->
+
+<script src="/javascripts/Scrollbar.js"></script>
+
+
+</body>
+</html>
