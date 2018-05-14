@@ -1,23 +1,239 @@
----
-layout: default
----
+<!DOCTYPE html>
 
-<div class="home">
+<!--Started with the "Startup Template" on w3schools.com, heavily modified by first_name last_name -->
 
-  <h1 class="page-heading">Posts</h1>
+<html>
+<title>Pentagonite Studios</title>
+<link rel="icon" href="Pictures/Logo_favicon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="MainStyle.css">
+<link href="https://fonts.googleapis.com/css?family=Hind+Vadodara" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Hind Vadodara", sans-serif}
+body, html {
+    height: 100%;
+    line-height: 1.8;
+}
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+/*Image header */
+.bgimg-1 {
+    background-position: center;
+    background-size: cover;
+    background-image: url("Pictures/Main_banner.jpg");
+    min-height: 75%;
+}
+.w3-bar .w3-button {
+    padding: 16px;
+}
+</style>
+<body>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+<!-- Navbar (sit on top) -->
+<div id="NavBar" class="w3-bar pentagonite-dark">
+  <a href="#home" class="w3-bar-item w3-button w3-wide logoback" style="padding-left: 90px">Pentagonite Studios</a>
+  <!-- Right-sided navbar links -->
+  <div class="w3-right w3-hide-small">
+    <a href="#about" class="w3-bar-item w3-button">About Me</a>
+    <a href="Gallery.html" class="w3-bar-item w3-button">Gallery</a>
+    <!--<a href="Store.html" class="w3-bar-item w3-button">Store</a>-->
+    <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+    <a href="Blog" class="w3-bar-item w3-button">Blog</a>
+  </div>
+  <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+    <i class="fa fa-bars"></i>
+  </a>
 </div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block pentagonite-dark w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">About Me</a>
+  <a href="Gallery.html" onclick="w3_close()" class="w3-bar-item w3-button">Gallery</a>
+  <!--<a href="Store.html" onclick="w3_close()" class="w3-bar-item w3-button">Store</a>-->
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">Contact</a>
+  <a href="Blog" class="w3-bar-item w3-button">Blog</a>
+</nav>
+
+<!-- Header with full-height image -->
+<header class="bgimg-1 w3-display-container" id="home">
+  <div class="w3-display-left white-text" style="padding:48px">
+    <br>
+    <span class="w3-jumbo w3-hide-small">Welcome to Pentagonite Studios!</span><br>
+    <span class="w3-xxlarge w3-hide-large w3-hide-medium">Welcome to Pentagonite Studios!</span><br>
+    <span class="w3-large">The work of first_name last_name</span>
+    <p><a href="Gallery.html" class="w3-button pentagonite-faded w3-padding-large w3-large w3-margin-top pentagonite-medium-hover w3-hover-opacity">See my work!</a></p>
+  </div> 
+  <div class="w3-display-bottomleft white-text w3-large" style="padding:24px 48px">
+    <a href="https://www.facebook.com/pentagonitestudios"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+    <a href="https://twitter.com/PentagoniteStdo"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+    <a href="https://www.instagram.com/gemhunterdoesart/"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+    <!--<i class="fa fa-snapchat w3-hover-opacity"></i>-->
+    <a href="https://gemhunter178.deviantart.com/"><i class="fa fa-deviantart w3-hover-opacity"></i></a>
+    <!--<i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>-->
+  </div>
+</header>
+
+<!-- Notice Section -->
+<div class="w3-container pentagonite-superfaded" style="padding:64px 16px" id="notice">
+  <h3 class="w3-center">This site is a Work in Progress!</h3>
+  <p class="w3-center w3-small">I am currently redesigning and fixing links on this webpage! Please excuse anything that doesn't quite work just yet</p>
+</div>
+
+<!-- About Section -->
+<div class="w3-container pentagoniteblue" style="padding:64px 16px" id="about">
+  <h3 class="w3-center">About Pentagonite Studios</h3>
+  <div class="w3-row-padding w3-center" style="margin-top:16px margin-bottom:16px">
+    <div class="w3-full">
+      <p>Pentagonite Studios was made to house the works of first_name last_name (a portfolio) as well as a site to see anything else going on with first_name. He will be taking over the text in the "About Me' section below.<br></p>
+      <p class = "w3-small">PS: first_name also loves rocks and minerals, hence the name</p>
+    </div>
+  </div>
+</div>
+<div class="w3-container pentagonite-darkish" style="padding:64px 16px" id="about">
+  <h3 class="w3-center">About Me</h3>
+  <div class="w3-row-padding w3-center" style="margin-top:16px margin-bottom:16px">
+    <div class="w3-full">
+       <p>Hi! I'm first_name last_name, a self-proclaimed artist/designer specializing in.... whatever I get my hands on! Feel free to check the gallery to see some works/projects/tests I have made! Do <a href = #contact class = "cleartextstyle">contact</a> me if you have any inquiries!</p>
+    </div>
+  </div>
+  <div class="w3-row-padding w3-center" style="margin-top:16px margin-bottom:16px">
+    <div class="w3-half">
+      <p class="w3-large">Adaptive</p>
+      <p>With experience in prop building, woodworking, origami, painting and drawing (both digitally and physically), I have a wide set of skills to make things work. Something not listed? I'm quick to learn anything thrown at me.</p>
+    </div>
+    <div class="w3-half">
+      <p class="w3-large">Passionate</p>
+      <p>I am self-taught in most of my art and design skills, and I am self motivated to learn any new mediums or programs. On another note, I am willing to learn and talk to others to improve anything I do.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Promo Section  -->
+<div class="pentagonite-superfaded" style="padding:32px 16px">
+  <div class="w3-row-padding">
+    <div class="w3-half">
+        <h3>Changing Thought into Reality</h3>
+        <p>Specializing in many mediums, I have the skills it takes to change an idea into reality.</p>
+        <p><a href="Gallery.html" class="w3-button pentagonite-darkish">View My Works</a></p>
+    </div>
+    <div class="picture-slant-1">
+    </div>
+    <div class="picture-slant-2">
+    </div>
+    <div class="picture-slant-3">
+    </div>
+  </div>
+</div>
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal pentagonite-dark" onclick="this.style.display='none'">
+  <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">×</span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" class="w3-image">
+    <p id="caption" class="w3-opacity w3-large"></p>
+  </div>
+</div>
+
+<!-- Contact Section -->
+<div class="w3-container pentagoniteblue" style="padding:64px 16px" id="contact">
+  <p class="w3-center w3-large">Want to ask me a question?</p>
+  <h3 class="w3-center">Contact Me!</h3>
+  <div class="w3-row-padding" style="margin-top:0px">
+    <div class="w3-half">
+      <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Massachusetts, USA</p>
+      <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +01 978-284-9525</p>
+      <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: info@pentagonitestudios.com</p>
+      <br>
+    </div>
+    <div class="w3-half">
+      <p>Currently, this site is hosted without form capabilities... Please use this button below if you wish to have a form for emails.</p>
+      <a href="https://form.jotform.com/81195938303158" target="_blank" class="w3-button pentagonite-medium"><i class="fa fa-external-link"></i> Send me an Email!</a>
+      <!--<form action="Contacted.php" target="_blank">
+        <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
+        <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
+        <p><input class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject"></p>
+        <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
+        <p>
+          <button class="w3-button pentagonite-faded pentagonite-superfaded-hover" type="submit">
+            <i class="fa fa-paper-plane"></i> SEND MESSAGE
+          </button>
+        </p>
+      </form>-->
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-center pentagonite-dark" style="padding-top: 64px; padding-bottom: 32px">
+  <a href="#home" class="w3-button pentagonite-superfaded"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <div class="w3-xlarge w3-section">
+    <a href="https://www.facebook.com/pentagonitestudios"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+    <a href="https://twitter.com/PentagoniteStdo"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+    <a href="https://www.instagram.com/gemhunterdoesart/"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+    <!--<i class="fa fa-snapchat w3-hover-opacity"></i>-->
+    <a href="https://gemhunter178.deviantart.com/"><i class="fa fa-deviantart w3-hover-opacity"></i></a>
+    <!--<i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>-->
+  </div>
+  <p>Template from <a href="https://www.w3schools.com" title="W3.CSS" target="_blank" class="pentagoniteblue-text-hover">w3schools.com</a>, edited and adapted by first_name last_name</p>
+</footer>
+ 
+<!-- Add Google Maps -->
+<script>
+/*function myMap()
+{
+  myCenter=new google.maps.LatLng(0,0);
+  var mapOptions= {
+    center:myCenter,
+    zoom:12, scrollwheel: false, draggable: false,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
+
+  var marker = new google.maps.Marker({
+    position: myCenter,
+  });
+  marker.setMap(map);
+}*/
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+    } else {
+        mySidebar.style.display = 'block';
+    }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+</script>
+<!-- Extra scripts added by me -->
+
+<script src="javascripts/Scrollbar.js"></script>
+
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+--><!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+
+</body>
+</html>
