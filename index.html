@@ -84,7 +84,7 @@
   <div class="w3-center">
   <h1 class="w3-xxxlarge w3-animate-bottom">Welcome to Gem's Secondary Site!</h1>
     <div style="padding-bottom: 5vh">
-      <a href="https://gemhunter178.com/" target="_blank"><button class="w3-btn w3-large w3-theme-dark w3-hover-teal" style="font-weight:900;"><i class="fa fa-external-link"></i> main site?</button></a>
+      <a href="https://gemhunter178.com/" target="_blank"><button class="w3-btn w3-large w3-theme-dark w3-hover-teal" style="font-weight:900;"><i class="fa fa-external-link"></i> main site? [WIP]</button></a>
     </div>
   </div>
 </header>
@@ -92,7 +92,7 @@
 
 <div class="w3-row-padding w3-center w3-margin-top">
   <div class="w3-card w3-container" style="min-height:5vh">
-  <h3>Hosting files some files here I guess?</h3><br>
+  <h3>Hosting files some files here I guess</h3><br>
   <i class="fa fa-files-o w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
   <p>I didn't want to use pastebin, ok?</p>
   </div>
@@ -151,8 +151,9 @@
     <a class="w3-text-white" href="#"><span class="w3-xlarge">
     <i class="fa fa-chevron-circle-up"></i></span></a>
   </div>
-  <p>Remember to check out our&nbsp;&nbsp;<a href="https://www.w3schools.com/w3css/w3css_references.asp" class="w3-btn w3-theme" target="_blank">W3.CSS Reference</a></p>
-  <p style="padding-bottom:2vh">edited/adapted by Gem!</p>
+  <p><a href="https://www.w3schools.com/w3css/w3css_references.asp" class="w3-btn w3-theme" target="_blank">W3.CSS Reference</a></p>
+  <p>edited/adapted by Gem!</p>
+  <p style="padding-bottom:2vh">Hosted by Github pages</p>
 </footer>
 
 <!-- Script for Sidebar, Tabs, Accordions, Progress bars and slideshows -->
@@ -185,54 +186,8 @@ function openCity(evt, cityName) {
   evt.currentTarget.className += " w3-theme-dark";
 }
 
-var mybtn = document.getElementsByClassName("testbtn")[0];
-mybtn.click();
 
-// Accordions
-function myAccFunc(id) {
-  var x = document.getElementById(id);
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
 
-// Slideshows
-var slideIndex = 1;
-
-function plusDivs(n) {
-  slideIndex = slideIndex + n;
-  showDivs(slideIndex);
-}
-
-function showDivs(n) {
-  var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = x.length} ;
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  x[slideIndex-1].style.display = "block";  
-}
-
-showDivs(1);
-
-// Progress Bars
-function move() {
-  var elem = document.getElementById("myBar");   
-  var width = 1;
-  var id = setInterval(frame, 10);
-  function frame() {
-    if (width == 100) {
-      clearInterval(id);
-    } else {
-      width++; 
-      elem.style.width = width + '%'; 
-      elem.innerHTML = width * 1  + '%';
-    }
-  }
-}
 </script>
 
 
