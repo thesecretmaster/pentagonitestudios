@@ -26,13 +26,13 @@ if((Math.random())<0.9){
 		sz=7;
 	}else if(fsh>7.5){
 		sz=6;
-	}else if(fsh>6.5){
+	}else if(fsh>6.25){
 		sz=5;
-	}else if(fsh>5.5){
+	}else if(fsh>5.25){
 		sz=4;
-	}else if(fsh>4.5){
+	}else if(fsh>4.75){
 		sz=3;
-	}else if(fsh>3.5){
+	}else if(fsh>3.75){
 		sz=2;
 	}else if(fsh>2.5){
 		sz=1;
