@@ -14,8 +14,8 @@ const msg=["Teeny fish! 🐟 ",
 "Not bad! lycelYes ",
 "Pretty good! lycelYay ",
 "What a catch! lycelIly ",
-"That's a big 'un lycelPog ",
-"Those are rare! lycelCool ",
+"That's a big 'un lycelCool ",
+"Those are rare! lycelPog ",
 "lycelW lycelW lycelW "];
 sz=0;
 fishoutput=" ";
