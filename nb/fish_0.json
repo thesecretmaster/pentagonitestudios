@@ -1,0 +1,3 @@
+fsh = 5 + Math.random()*95;
+on=true;
+const msg=["Teeny fish! 🐟 ","Not bad! lycelYes ","What a catch! lycelYay ","That's a big 'un lycelPog ","Oh no! The fish escaped!! smolPanic ","!fish is closed. Thanks for fishing with us!! kaestr1Hug"]
