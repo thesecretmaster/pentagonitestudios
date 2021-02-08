@@ -8,7 +8,7 @@ while(gaus>25||gaus<-4.5){
 	gaus = gaus*3;
 }
 fsh = 5+ gaus;
-const msg=["Teeny fish! 🐟 ",
+const msg=["Teeny fish! lycelAAA ",
 "Oh, I caught one lycelLurk ",
 "Okay lycelIdk ",
 "Not bad! lycelYes ",
