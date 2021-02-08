@@ -9,20 +9,35 @@ while(gaus>3||gaus<0.045){
 }
 fsh = gaus*10;
 const msg=["Teeny fish! 🐟 ",
+"Oh, I caught one lycelLurk ",
+"Okay lycelIdk ",
 "Not bad! lycelYes ",
-"What a catch! lycelYay ",
-"That's a big 'un lycelPog "];
+"Pretty good! lycelYay ",
+"What a catch! lycelIly ",
+"That's a big 'un lycelPog ",
+"Those are rare! lycelCool ",
+"lycelW lycelW lycelW "];
 sz=0;
 fishoutput=" ";
-if((Math.random())<0.95){
-	if(fsh>7.5){
+if((Math.random())<0.9){
+	if(fsh>20.0){
+		sz=8;
+	}else if(fsh>10.0){
+		sz=7;
+	}else if(fsh>7.5){
+		sz=6;
+	}else if(fsh>6.5){
+		sz=5;
+	}else if(fsh>5.5){
+		sz=4;
+	}else if(fsh>4.5){
 		sz=3;
-	}else if(fsh>5.0){
+	}else if(fsh>3.5){
 		sz=2;
 	}else if(fsh>2.5){
 		sz=1;
 	}
 	fishoutput = user+" caught a fish of "+fsh.toFixed(2)+"kg! ("+(fsh*2.20462).toFixed(2)+"lbs) "+msg[sz]; 
 }else{
-	fishoutput = "Oh no! The fish escaped!! smolPanic ";
+	fishoutput = "Oh no! The fish escaped!! lycelHands ";
 }
