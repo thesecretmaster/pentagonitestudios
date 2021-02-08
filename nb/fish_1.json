@@ -1,5 +1,5 @@
 var gaus=-1;
-while(gaus>3||gaus<0){
+while(gaus>3||gaus<0.045){
 	let u=0;
  	let v=0;
 	while(u === 0) u = Math.random();
@@ -7,6 +7,22 @@ while(gaus>3||gaus<0){
 	gaus = Math.sqrt(-2.0*Math.log(u))*Math.cos(2.0*Math.PI*v);
 	gaus = gaus / 10.0 + 0.5;
 }
-fsh = 5 + gaus*95;
-on = true;
-const msg=["Teeny fish! 🐟 ","Not bad! lycelYes ","What a catch! lycelYay ","That's a big 'un lycelPog ","Oh no! The fish escaped!! smolPanic ","!fish is closed. Thanks for fishing with us!! kaestr1Hug"]
+fsh = gaus*10;
+const msg=["Teeny fish! 🐟 ",
+"Not bad! lycelYes ",
+"What a catch! lycelYay ",
+"That's a big 'un lycelPog "];
+sz=0;
+fishoutput=" ";
+if((Math.random())<0.95){
+	if(fsh>7.5){
+		sz=3;
+	}else if(fsh>5.0){
+		sz=2;
+	}else if(fsh>2.5){
+		sz=1;
+	}
+	fishoutput = user+" caught a fish of "+fsh.toFixed(2)+"kg! ("+(fsh*2.20462).toFixed(2)+"lbs) "+msg[sz]; 
+}else{
+	fishoutput = "Oh no! The fish escaped!! smolPanic ";
+}

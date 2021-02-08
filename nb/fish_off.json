@@ -1,3 +1,1 @@
-fsh=0;
-on=false;
-const msg=["0","1","2","3","4","!fish is closed. Thanks for fishing with us!! kaestr1Hug"]
+fishoutput="!fish is closed. Thanks for fishing with us!! kaestr1Hug"
