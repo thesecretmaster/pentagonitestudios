@@ -3,7 +3,7 @@ const msg=["Teeny fish! 🐟 ",
 "Not bad! lycelYes ",
 "What a catch! lycelYay ",
 "That's a big 'un lycelPog "
-]
+];
 sz=0;
 fishoutput=" ";
 if((Math.random() + fsh/300) < 0.9){
