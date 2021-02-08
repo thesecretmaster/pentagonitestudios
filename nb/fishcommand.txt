@@ -1,21 +1,5 @@
 $(eval 
+user="$(user)";
 $(urlfetch json http://pentagonitestudios.com/nb/fish_1.json);
-sz=0;
-if(on){
-	if((Math.random())<0.95){
-		if(fsh>75){
-			sz=3;
-		}else if(fsh>50){
-			sz=2;
-		}else if(fsh>25){
-			sz=1;
-		}
-		fsh=fsh/10;
-		"$(user) caught a fish of "+fsh.toFixed(2)+"kg! ("+(fsh*2.20462).toFixed(2)+"lbs) "+msg[sz]; 
-	}else{
-		msg[4];
-	}
-}else{
-	msg[5];
-}
+fishoutput;
 )
