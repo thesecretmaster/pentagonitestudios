@@ -2,7 +2,7 @@ fsh = 5 + Math.random()*95;
 const msg=["Teeny fish! 🐟 ",
 "Not bad! lycelYes ",
 "What a catch! lycelYay ",
-"That's a big 'un lycelPog "
+"That's a big 'un lycelCool "
 ];
 sz=0;
 fishoutput=" ";
