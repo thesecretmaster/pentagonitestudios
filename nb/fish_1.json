@@ -15,8 +15,8 @@ const msg=["Teeny fish! lycelGib ",
 "Pretty good! lycelCool ",
 "What a catch! lycelYay ",
 "That's a big 'un lycelAAA ",
-"Those are rare! lycelW ",
-"BEEG FISH!! lycelChaos "];
+"Those are rare! lycelBlush ",
+"lycelW lycelW lycelW "];
 sz=0;
 fishoutput=" ";
 if((Math.random())<0.9){
