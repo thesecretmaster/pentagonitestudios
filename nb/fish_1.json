@@ -8,13 +8,13 @@ while(gaus>25||gaus<-4.5){
 	gaus = gaus*2.75;
 }
 fsh = 5+ gaus;
-const msg=["Teeny fish! lycelAAA ",
-"Oh, I caught one lycelEyes ",
+const msg=["Teeny fish! lycelGib ",
+"Oh, I caught one lycelWhatif ",
 "Okay lycelIdk ",
 "Not bad! lycelYes ",
-"Pretty good! lycelYay ",
-"What a catch! lycelIly ",
-"That's a big 'un lycelCool ",
+"Pretty good! lycelCool ",
+"What a catch! lycelYay ",
+"That's a big 'un lycelAAA ",
 "Those are rare! lycelBlush ",
 "lycelW lycelW lycelW "];
 sz=0;
