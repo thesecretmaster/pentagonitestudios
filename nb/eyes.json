@@ -1,9 +1,7 @@
 const eyes=['pcrowEyes',
 'bryce4Eyes',
-'hypoth7Eyes',
 'cjyaEyes',
 'lycelEyes',
-'snazjdEyes',
 'maizEyes',
 'archit3Eyes',
 'smolEyes',
@@ -13,5 +11,4 @@ const eyes=['pcrowEyes',
 'pcrowO',
 'maizFlushed',
 'pcrowW',
-'lycelGaze',
-'abibeaLurk']
+'kaestr1Eyes']
