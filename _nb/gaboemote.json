@@ -2,6 +2,8 @@
 description: a long array of emotes Gabo sent me. array's name is "emotes"
 variables:
   - emotes
+tag: for testing only
+order: 2
 ---
 
 const emotes=['kaestr1Cool',

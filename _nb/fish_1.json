@@ -7,6 +7,8 @@ variables:
   - msg
   - sz
   - fishoutput
+tag: specific commands
+order: 1
 ---
 
 var gaus=-5;

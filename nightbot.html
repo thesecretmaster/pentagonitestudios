@@ -30,21 +30,25 @@ title: Gem's other website!
 }
 </style>
 
+{% assign tags = site.data.command_tags %}
+{% assign actual_tags = site.nb | map: "tag" | uniq %}
+{% for tag in actual_tags %}
+  {% unless tags contains tag %}
+    {% assign tags = tags | push: tag %}
+  {% endunless %}
+{% endfor %}
+{% assign grouped_pages = site.nb | group_by: "tag" %}
 <div class="w3-container w3-padding">
   <ul class="w3-ul w3-border w3-hoverable">
-    {% for command in site.data.commands %}
-      {% assign category = command[0] %}
-      {% assign files = command[1] %}
-
+    {% for category in tags %}
+      {% assign files = grouped_pages | where_exp: "item", "item.name == category" | first %}
       <li class="w3-theme">{{ category }}</li>
-      {% for file in files %}
-        {% capture filename %}{{ file }}.json{% endcapture %}
-        {% capture page_cond %}item.path == "_nb/{{ filename }}"{% endcapture %}
-        {% assign pg = site.nb | where_exp: "item", page_cond | first %}
+      {% assign sorted_files = files.items | sort: "order" %}
+      {% for pg in sorted_files %}
         <li>
           <span class="expand-detailbox">+</span>
           <span>
-            <a href="{{ pg.url }}" target="_blank"><b>{{filename}}</b></a><i data-target-url="{{site.url}}{{ pg.url }}" class="copybtn fa fa-clipboard"></i>: <span class="command-description">{{ pg.description | markdownify }}</span>
+            <a href="{{ pg.url }}" target="_blank"><b>{{ pg.slug }}{{ pg.ext }}</b></a><i data-target-url="{{site.url}}{{ pg.url }}" class="copybtn fa fa-clipboard"></i>: <span class="command-description">{{ pg.description | markdownify }}</span>
           </span>
           <div class="command-detailbox">
             {% assign formatted_vars = "" | split: "" %}

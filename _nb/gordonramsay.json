@@ -4,6 +4,8 @@ variables:
   - gr1
   - gr2
   - gr3
+tag: large arrays
+order: 1
 ---
 
 /*original insult generator by @radravioli_*/

@@ -5,6 +5,8 @@ variables:
   - msg
   - sz
   - fishoutput
+tag: specific commands
+order: 0
 ---
 
 fsh = 5 + Math.random()*95;
