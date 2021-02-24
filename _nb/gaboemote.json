@@ -1,5 +1,7 @@
 ---
 description: a long array of emotes Gabo sent me. array's name is "emotes"
+variables:
+  - emotes
 ---
 
 const emotes=['kaestr1Cool',

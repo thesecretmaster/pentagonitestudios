@@ -1,5 +1,8 @@
 ---
 description: requires an input string "_text_" that will then be output with a random number of typos. Original iteration that swaps and duplicates some letters
+variables:
+  - words
+  - text
 ---
 
 words = text.split(' ');

@@ -1,5 +1,9 @@
 ---
 description: 3 separate arrays "_gr1_", "_gr2_", "_gr3_" corresponding to <a href="https://www.pinterest.com/pin/840695455435779270/" target="_blank">@radravioli_'s insult generator</a>
+variables:
+  - gr1
+  - gr2
+  - gr3
 ---
 
 /*original insult generator by @radravioli_*/
