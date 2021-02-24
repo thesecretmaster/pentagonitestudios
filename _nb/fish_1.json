@@ -1,3 +1,8 @@
+---
+description: |
+  2021, Feb 08 update: fish are now generated based on a normal distribution. Use **[this](fishcommand.txt)** as the contents of the nightbot command
+---
+
 var gaus=-5;
 while(gaus>25||gaus<-4.5){
 	let u=0;
@@ -37,7 +42,7 @@ if((Math.random())<0.9){
 	}else if(fsh>2.5){
 		sz=1;
 	}
-	fishoutput = user+" caught a fish of "+fsh.toFixed(2)+"kg! ("+(fsh*2.20462).toFixed(2)+"lbs) "+msg[sz]; 
+	fishoutput = user+" caught a fish of "+fsh.toFixed(2)+"kg! ("+(fsh*2.20462).toFixed(2)+"lbs) "+msg[sz];
 }else{
 	fishoutput = "Oh no! The fish escaped!! lycelHands ";
 }

@@ -1,3 +1,7 @@
+---
+description: an array for a bunch of eye emotes we use. Array's name is "_eyes_"
+---
+
 const eyes=['pcrowEyes',
 'bryce4Eyes',
 'cjyaEyes',

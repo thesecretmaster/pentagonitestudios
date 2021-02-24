@@ -18,3 +18,8 @@ github_username:  gemhunter178
 
 # Build settings
 markdown: kramdown
+
+collections:
+  nb:
+    output: true
+    permalink: /:collection/:name.json

@@ -1,3 +1,7 @@
+---
+description: requires an input string "_text_" that will then be output with a random number of typos. Original iteration that swaps and duplicates some letters
+---
+
 words = text.split(' ');
 for(i=0;i<words.length;i++){
 	ltrs = words[i].split('');

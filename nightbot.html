@@ -11,24 +11,28 @@ title: Gem's other website!
   </div>
 </header>
 
+<style>
+.command-description > p {
+  display:inline;
+}
+</style>
 
 <div class="w3-container w3-padding">
-<ul class="w3-ul w3-border w3-hoverable">
-<li class="w3-theme">large arrays</li>
-<li><a href="nb/eyes.json" target="_blank"><b>eyes.json</b></a>: an array for a bunch of eye emotes we use. Array's name is "<i>eyes</i>"</li>
-<li><a href="nb/gordonramsay.json" target="_blank"><b>gordonramsay.json</b></a>: 3 separate arrays "<i>gr1</i>", "<i>gr2</i>", "<i>gr3</i>" corresponding to <a href="https://www.pinterest.com/pin/840695455435779270/" target="_blank">@radravioli_'s insult generator</a></li>
-<li><a href="nb/LMS.json" target="_blank"><b>LMS.json</b></a>: [CONTAINS EXPLETIVES] an array with the transcript of the popular <a href="https://www.youtube.com/watch?v=-TcLxlkc2pA" target="_blank">"lemme smash" meme.</a> Array's name is "<i>LMS</i>"</li>
-<li class="w3-theme">"functions"</li>
-<li><a href="nb/gaussian.json" target="_blank"><b>gaussian.json</b></a>: creates a variable "<i>gaus</i>" with a normal distribution from (0,1) //originally made by joshuakcockrell on stackoverflow, adapted by gem</li>
-<li><a href="nb/typo_0.json" target="_blank"><b>typo_0.json</b></a>: requires an input string "<i>text</i>" that will then be output with a random number of typos. Original iteration that swaps and duplicates some letters</li>
-<li class="w3-theme">specific commands</li>
-<li><a href="nb/fish_0.json" target="_blank"><b>fish_0.json</b></a>: The original fish code! (with some added functionality to work with the current command) just change <i>fish_1.json</i> to <i>fish_0.json</i> to use the legacy code</li>
-<li><a href="nb/fish_1.json" target="_blank"><b>fish_1.json</b></a>: 2021, Feb 08 update: fish are now generated based on a normal distribution. Use <a href="nb/fishcommand.txt" target="_blank"><b>this</b></a> as the contents of the nightbot command</li>
-<li><a href="nb/fish_off.json" target="_blank"><b>fish_off.json</b></a>: change <i>fish_[x].json</i> (x being version number) to <i>fish_off.json</i> to disable fishing without deleting the command</li>
-<li class="w3-theme">for testing only</li>
-<li><a href="nb/test.json" target="_blank"><b>test.json</b></a>: this is just a single json with a const array "texttest"</li>
-<li><a href="nb/gaboemote.json" target="_blank"><b>gaboemote.json</b></a>: a long array of emotes Gabo sent me. array's name is "emotes"</li>
-</ul>
+  <ul class="w3-ul w3-border w3-hoverable">
+    {% for command in site.data.commands %}
+      {% assign category = command[0] %}
+      {% assign files = command[1] %}
+
+      <li class="w3-theme">{{ category }}</li>
+      {% for file in files %}
+        {% capture filename %}{{ file }}.json{% endcapture %}
+        {% capture full_filename %}_nb/{{ filename }}{% endcapture %}
+        {% capture page_cond %}item.path == "{{ full_filename }}"{% endcapture %}
+        {% assign pg = site.nb | where_exp: "item", page_cond | first %}
+        <li><a href="{% link {{full_filename}} %}" target="_blank"><b>{{filename}}</b></a>: <span class="command-description">{{ pg.description | markdownify }}</span></li>
+      {% endfor %}
+    {% endfor %}
+  </ul>
 </div>
 
 <script>
