@@ -1,3 +1,14 @@
+---
+description: The original fish code! (with some added functionality to work with the current command) just change `fish_1.json` to `fish_0.json` to use the legacy code
+variables:
+  - fsh
+  - msg
+  - sz
+  - fishoutput
+tag: specific commands
+order: 0
+---
+
 fsh = 5 + Math.random()*95;
 const msg=["Teeny fish! 🐟 ",
 "Not bad! lycelYes ",
