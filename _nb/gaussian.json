@@ -1,11 +1,3 @@
----
-description: creates a variable "_gaus_" with a normal distribution from (0,1) //originally made by joshuakcockrell on stackoverflow, adapted by gem
-variables:
-  - gaus
-tag: functions
-order: 0
----
-
 var gaus=-1;
 while(gaus>1||gaus<0){
 	let u=0;

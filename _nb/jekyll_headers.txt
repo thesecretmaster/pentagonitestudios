@@ -1,0 +1,90 @@
+---
+description: an array for a bunch of eye emotes we use. Array's name is "_eyes_"
+variables:
+  - eyes
+tag: large arrays
+order: 0
+---
+---
+description: 3 separate arrays "_gr1_", "_gr2_", "_gr3_" corresponding to <a href="https://www.pinterest.com/pin/840695455435779270/" target="_blank">@radravioli_'s insult generator</a>
+variables:
+  - gr1
+  - gr2
+  - gr3
+tag: large arrays
+order: 1
+---
+---
+description: |
+  [CONTAINS EXPLETIVES] an array with the transcript of the popular <a href="https://www.youtube.com/watch?v=-TcLxlkc2pA" target="_blank">"lemme smash" meme.</a>. Array's name is "_LMS_"
+variables:
+  - LMS
+tag: large arrays
+order: 2
+---
+---
+description: A list of primes up to 10,000 in an array called "_primes_."
+variables:
+  - primes
+tag: large arrays
+order: 3
+---
+---
+description: creates a variable "_gaus_" with a normal distribution from (0,1) //originally made by joshuakcockrell on stackoverflow, adapted by gem
+variables:
+  - gaus
+tag: functions
+order: 0
+---
+---
+description: requires an input string "_text_" that will then be output with a random number of typos. Original iteration that swaps and duplicates some letters
+variables:
+  - words
+  - text
+tag: functions
+order: 1
+---
+---
+description: The original fish code! (with some added functionality to work with the current command) just change `fish_1.json` to `fish_0.json` to use the legacy code
+variables:
+  - fsh
+  - msg
+  - sz
+  - fishoutput
+tag: specific commands
+order: 0
+---
+---
+description: |
+  2021, Feb 08 update: fish are now generated based on a normal distribution. Use **[this](fishcommand.txt)** as the contents of the nightbot command
+variables:
+  - gaus
+  - fsh
+  - msg
+  - sz
+  - fishoutput
+tag: specific commands
+order: 1
+---
+---
+description: |
+  change `fish_[x].json` (x being version number) to `fish_off.json` to disable fishing without deleting the command
+variables:
+  - fishoutput
+tag: specific commands
+order: 2
+---
+---
+description: this is just a single json with a const array "texttest"
+variables:
+  - testtext
+tag: for testing only
+order: 1
+---
+---
+description: a long array of emotes Gabo sent me. array's name is "emotes"
+variables:
+  - emotes
+tag: for testing only
+order: 2
+---

@@ -1,11 +1,3 @@
----
-description: an array for a bunch of eye emotes we use. Array's name is "_eyes_"
-variables:
-  - eyes
-tag: large arrays
-order: 0
----
-
 const eyes=['pcrowEyes',
 'bryce4Eyes',
 'cjyaEyes',
