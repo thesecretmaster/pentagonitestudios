@@ -22,4 +22,4 @@ markdown: kramdown
 collections:
   nb:
     output: true
-    permalink: /:collection/:name.json
+    permalink: /:collection/:path
