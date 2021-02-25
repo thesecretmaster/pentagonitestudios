@@ -1,3 +1,11 @@
+---
+description: A list of primes up to 10,000 in an array called "_primes_."
+variables:
+  - primes
+tag: large arrays
+order: 3
+---
+
 const primes=[
 "1",
 "2",
