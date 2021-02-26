@@ -37,7 +37,7 @@ if(Math.random()>0.5){
 	prmNum=1+Math.floor(Math.random()*(promo.length-1));
 }
 
-msg="one of our mods - Gem (she/them) - "+messages[Math.floor(Math.random()*messages.length)]+" Follow her "+promo[prmNum];
+var msg="one of our mods - Gem (she/them) - "+messages[Math.floor(Math.random()*messages.length)]+" Follow her "+promo[prmNum];
 
 if(user=="Gemhunter178"){
 	let opt=text.split(' ');
