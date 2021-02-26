@@ -26,7 +26,7 @@ jobs:
           git branch --set-upstream-to=origin/$remote_branch $remote_branch
           git pull
           cd $GITHUB_WORKSPACE
-          export BASE_URL=$(curl -H "Accept: application/vnd.github.v3+json" https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@api.github.com/repos/$GITHUB_REPOSITORY/pages | jq -r .source.path)
+          export BASE_URL=$(curl -H "Accept: application/vnd.github.v3+json" https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@api.github.com/repos/$GITHUB_REPOSITORY/pages | jq -r .html_url)
           echo "Base URL: $BASE_URL"
           curl -H "Accept: application/vnd.github.v3+json" https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@api.github.com/repos/$GITHUB_REPOSITORY/pages
           bundle exec jekyll build -b $BASE_URL -s $GITHUB_WORKSPACE -d $GITHUB_WORKSPACE/../jekyll_build
