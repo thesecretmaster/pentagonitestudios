@@ -28,6 +28,6 @@ jobs:
           git commit --allow-empty -m "jekyll build from Action ${GITHUB_SHA}" && \
           git push $REMOTE_REPO ${remote_branch}:${remote_branch}
         env:
-          BUILD_DIR: ${{GITHUB_WORKSPACE}}/../jekyll_build
-          REMOTE_REPO: https://${{GITHUB_ACTOR}}:${{ secrets.GITHUB_TOKEN }}@github.com/${{GITHUB_REPOSITORY}}.git
+          BUILD_DIR: $GITHUB_WORKSPACE/../jekyll_build
+          REMOTE_REPO: https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git
           remote_branch: tsm-jekyll-upgrade-out
