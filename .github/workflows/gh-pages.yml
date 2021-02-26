@@ -17,17 +17,15 @@ jobs:
       - name: Build jekyll
         shell: bash
         run: |
-          mkdir $BUILD_DIR
-          cd $BUILD_DIR
-          git clone --branch $remote_branch $REMOTE_REPO .
+          mkdir $GITHUB_WORKSPACE/../jekyll_build
+          cd $GITHUB_WORKSPACE/../jekyll_build
+          git clone --branch $remote_branch https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git .
           touch .nojekyll
-          bundle exec jekyll build -s ${GITHUB_WORKSPACE} -d $BUILD_DIR
-          git config user.name "${GITHUB_ACTOR}" && \
-          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com" && \
+          bundle exec jekyll build -s $GITHUB_WORKSPACE -d $GITHUB_WORKSPACE/../jekyll_build
+          git config user.name "$GITHUB_ACTOR" && \
+          git config user.email "$GITHUB_ACTOR@users.noreply.github.com" && \
           git add . && \
-          git commit --allow-empty -m "jekyll build from Action ${GITHUB_SHA}" && \
-          git push $REMOTE_REPO ${remote_branch}:${remote_branch}
+          git commit --allow-empty -m "jekyll build from Action $GITHUB_SHA" && \
+          git push https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git $remote_branch:$remote_branch
         env:
-          BUILD_DIR: $GITHUB_WORKSPACE/../jekyll_build
-          REMOTE_REPO: https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git
           remote_branch: tsm-jekyll-upgrade-out
