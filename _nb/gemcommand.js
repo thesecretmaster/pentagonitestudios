@@ -23,7 +23,9 @@ const messages=[
 "can do imtermediate origami 🏵️",
 "has been to active mines for rocks! 🪨",
 "has all 7 continents representing in her rock collection! smolWow",
-"is attempting to help out with endangered cacti breeding 🌵"
+"is attempting to help out with endangered cacti breeding 🌵",
+"probably needs more sleep smolNap",
+"can help out with making nightbot commands! lycelYay"
 ];
 
 const promo=[
