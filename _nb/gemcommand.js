@@ -33,7 +33,7 @@ const promo=[
 ];
 
 var prmNum=0;
-if(Math.random()>0.5){
+if(Math.random()>0.7){
 	prmNum=1+Math.floor(Math.random()*(promo.length-1));
 }
 
