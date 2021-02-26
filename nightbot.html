@@ -1,9 +1,87 @@
----
-layout: template
-title: Gem's other website!
----
+<!DOCTYPE html>
+<!-- saved from url=(0059)https://www.w3schools.com/w3css/tryw3css_templates_teal.htm -->
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Gem's other website!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/Pictures/Logo_favicon.png">
+    <link rel="stylesheet" href="/original_template_files/w3.css">
+    <link rel="stylesheet" href="/original_template_files/w3-theme-teal.css">
+    <link rel="stylesheet" href="/original_template_files/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Hind+Vadodara" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link id="avast_os_ext_custom_font" href="chrome-extension://eofcbnmajmjmplflapaojjnihcjkigck/common/ui/fonts/fonts.css" rel="stylesheet" type="text/css"><style type="text/css">.backpack.dropzone {
+      font-family: 'SF UI Display', 'Segoe UI';
+      font-size: 15px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 250px;
+      height: 150px;
+      font-weight: lighter;
+      color: white;
+      will-change: right;
+      z-index: 2147483647;
+      bottom: 20%;
+      background: #333;
+      position: fixed;
+      user-select: none;
+      transition: left .5s, right .5s;
+      right: 0px; }
+      .backpack.dropzone .animation {
+        height: 80px;
+        width: 250px;
+        background: url("chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/assets/backpack/dropzone/hoverstate.png") left center; }
+      .backpack.dropzone .title::before {
+        content: 'Save to'; }
+      .backpack.dropzone.closed {
+        right: -250px; }
+      .backpack.dropzone.hover .animation {
+        animation: sxt-play-anim-hover 0.91s steps(21);
+        animation-fill-mode: forwards;
+        background: url("chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/assets/backpack/dropzone/hoverstate.png") left center; }
 
-<!-- Header -->
+    @keyframes sxt-play-anim-hover {
+      from {
+        background-position: 0px; }
+      to {
+        background-position: -5250px; } }
+      .backpack.dropzone.saving .title::before {
+        content: 'Saving to'; }
+      .backpack.dropzone.saving .animation {
+        background: url("chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/assets/backpack/dropzone/saving_loop.png") left center;
+        animation: sxt-play-anim-saving steps(59) 2.46s infinite; }
+
+    @keyframes sxt-play-anim-saving {
+      100% {
+        background-position: -14750px; } }
+      .backpack.dropzone.saved .title::before {
+        content: 'Saved to'; }
+      .backpack.dropzone.saved .animation {
+        background: url("chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/assets/backpack/dropzone/saved.png") left center;
+        animation: sxt-play-anim-saved steps(20) 0.83s forwards; }
+
+    @keyframes sxt-play-anim-saved {
+      100% {
+        background-position: -5000px; } }
+    </style>
+    <!-- Script for Sidebar, Tabs, Accordions, Progress bars and slideshows -->
+    <script src="/nav_helpers.js"></script>
+  </head>
+  <body>
+    <!-- Side Navigation -->
+    <nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none" id="mySidebar">
+      <h1 class="w3-xxxlarge w3-text-theme">Where to?</h1>
+      <button class="w3-bar-item w3-button" onclick="w3_close()">Close <i class="fa fa-remove"></i></button>
+      <a href="/" class="w3-bar-item w3-button">Home</a>
+      <a href="/nightbot.html" class="w3-bar-item w3-button">List of nightbot urlfetch extends</a>
+      <a href="https://www.w3schools.com/w3css/tryw3css_templates_teal.htm" class="w3-bar-item w3-button"><i class="fa fa-external-link"></i> The original template!</a>
+    </nav>
+
+    <!-- Header -->
 <header class="w3-container w3-theme w3-padding" id="myHeader">
   <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i>
   <div class="w3-center">
@@ -30,40 +108,1668 @@ title: Gem's other website!
 }
 </style>
 
-{% assign tags = site.data.command_tags %}
-{% assign actual_tags = site.nb | map: "tag" | uniq %}
-{% for tag in actual_tags %}
-  {% unless tags contains tag %}
-    {% assign tags = tags | push: tag %}
-  {% endunless %}
-{% endfor %}
-{% assign grouped_pages = site.nb | group_by: "tag" %}
+
+
+
+
 <div class="w3-container w3-padding">
   <ul class="w3-ul w3-border w3-hoverable">
-    {% for category in tags %}
-      {% assign files = grouped_pages | where_exp: "item", "item.name == category" | first %}
-      <li class="w3-theme">{{ category }}</li>
-      {% assign sorted_files = files.items | sort: "order" %}
-      {% for pg in sorted_files %}
+    
+      
+      <li class="w3-theme">large arrays</li>
+      
+      
         <li>
           <span class="expand-detailbox">+</span>
           <span>
-            <a href="{{ pg.url }}{{ pg.ext }}" target="_blank"><b>{{ pg.slug }}{{ pg.ext }}</b></a><i data-target-url="{{site.url}}{{ pg.url }}" class="copybtn fa fa-clipboard"></i>: <span class="command-description">{{ pg.description | markdownify }}</span>
+            <a href="/nb/eyes.json" target="_blank"><b>eyes.json</b></a><i data-target-url="https://pentagonitestudios.com/nb/eyes" class="copybtn fa fa-clipboard"></i>: <span class="command-description"><p>an array for a bunch of eye emotes we use. Array’s name is “<em>eyes</em>”</p>
+</span>
           </span>
           <div class="command-detailbox">
-            {% assign formatted_vars = "" | split: "" %}
-            {% for variable in pg.variables %}
-              {% capture formatted_var %}<code>{{ variable}}</code>{% endcapture %}
-              {% assign formatted_vars = formatted_vars | push: formatted_var %}
-            {% endfor %}
-            <p>variables: {{ formatted_vars | join: ", "}}</p>
+            
+            
+            <p>variables: <code>eyes</code></p>
             <pre><code class="language-javascript">
-              {{ pg | xml_escape }}
+              const eyes=['pcrowEyes',
+'bryce4Eyes',
+'cjyaEyes',
+'lycelEyes',
+'maizEyes',
+'archit3Eyes',
+'smolEyes',
+'abbybaTea',
+'lycelW',
+'paintbNoScuff',
+'pcrowO',
+'maizFlushed',
+'pcrowW',
+'kaestr1Eyes']
+
             </code></pre>
           </div>
         </li>
-      {% endfor %}
-    {% endfor %}
+      
+        <li>
+          <span class="expand-detailbox">+</span>
+          <span>
+            <a href="/nb/gordonramsay.json" target="_blank"><b>gordonramsay.json</b></a><i data-target-url="https://pentagonitestudios.com/nb/gordonramsay" class="copybtn fa fa-clipboard"></i>: <span class="command-description"><p>3 separate arrays “<em>gr1</em>”, “<em>gr2</em>”, “<em>gr3</em>” corresponding to <a href="https://www.pinterest.com/pin/840695455435779270/" target="_blank">@radravioli_’s insult generator</a></p>
+</span>
+          </span>
+          <div class="command-detailbox">
+            
+            
+            <p>variables: <code>gr1</code>, <code>gr2</code>, <code>gr3</code></p>
+            <pre><code class="language-javascript">
+              /*original insult generator by @radravioli_*/
+const gr1=['lamb sauce','chicken','gravy','soup','lamb chop','spinach','spaghetti','quail','risotto','egg'];
+const gr2=['like dog food scraps','RAW RAW RAW RAW','half dead','like a rubber implant',&quot;like gandhi's flip flop&quot;,'pinker than the panther','practically cremated','offensive','like a door stop','like wet cardboard','in need of jesus','like toxic scum'];
+const gr3=['absolute donkey','dirty pig','toilet brush','walnut','disgrace','idiot sandwich','yankee doodle donkey','lazy cow','muppet','donut']
+
+            </code></pre>
+          </div>
+        </li>
+      
+        <li>
+          <span class="expand-detailbox">+</span>
+          <span>
+            <a href="/nb/LMS.json" target="_blank"><b>LMS.json</b></a><i data-target-url="https://pentagonitestudios.com/nb/LMS" class="copybtn fa fa-clipboard"></i>: <span class="command-description"><p>[CONTAINS EXPLETIVES] an array with the transcript of the popular <a href="https://www.youtube.com/watch?v=-TcLxlkc2pA" target="_blank">“lemme smash” meme.</a>. Array’s name is “<em>LMS</em>”</p>
+</span>
+          </span>
+          <div class="command-detailbox">
+            
+            
+            <p>variables: <code>LMS</code></p>
+            <pre><code class="language-javascript">
+              LMS=[&quot;This is a nice stick&quot;,
+&quot;I like sticks (peck peck)&quot;,
+&quot;Lemme Smash, please&quot;,
+&quot;No Ron, go find Becky&quot;,
+&quot;You want some fuk?&quot;,
+&quot;No Ron, I don't want some fuk.&quot;,
+&quot;I got you blue.&quot;,
+&quot;Hey gurl, you want some tail? (flick)&quot;,
+&quot;Ugh...&quot;,
+&quot;Ron, your tail is small.&quot;,
+&quot;Wot? Swiggity Swooty?&quot;,
+&quot;You want yellow?&quot;,
+&quot;She doesn't want yellow.&quot;,
+&quot;Blue and yellow? No...&quot;,
+&quot;Ron I'm leaving.&quot;,
+&quot;Wot? No wait lemme smash!&quot;,
+&quot;What has my life come to?&quot;,
+&quot;Becky thought my tail was big&quot;,
+&quot;Becky used to Lemme Smash&quot;,&quot;but Becky is smashing Ben. Ben is a hoe. (heck)&quot;,
+&quot;Fuck this nest, fuck Ben!&quot;,
+&quot;I need you Becky&quot;,
+&quot;Becky lemme smash!&quot;,
+&quot;Ima get that bitch a stick&quot;,
+&quot;bitches love sticks&quot;,
+&quot;wrong stick&quot;,
+&quot;stick&quot;,
+&quot;stick&quot;,
+&quot;stick&quot;,
+&quot;stick&quot;,
+&quot;stick&quot;,
+&quot;stick&quot;,
+&quot;stick&quot;,
+&quot;stick&quot;,
+&quot;stick&quot;,
+&quot;stick&quot;,
+&quot;stick&quot;,
+&quot;stick&quot;,
+&quot;stick&quot;,
+&quot;Need stick got stick&quot;,
+&quot;Becky I got stick!&quot;,
+&quot;Lemme Smash!&quot;]
+
+            </code></pre>
+          </div>
+        </li>
+      
+        <li>
+          <span class="expand-detailbox">+</span>
+          <span>
+            <a href="/nb/primes10k.js" target="_blank"><b>primes10k.js</b></a><i data-target-url="https://pentagonitestudios.com/nb/primes10k" class="copybtn fa fa-clipboard"></i>: <span class="command-description"><p>A list of primes up to 10,000 in an array called “<em>primes</em>.”</p>
+</span>
+          </span>
+          <div class="command-detailbox">
+            
+            
+            <p>variables: <code>primes</code></p>
+            <pre><code class="language-javascript">
+              const primes=[
+&quot;1&quot;,
+&quot;2&quot;,
+&quot;3&quot;,
+&quot;5&quot;,
+&quot;7&quot;,
+&quot;11&quot;,
+&quot;13&quot;,
+&quot;17&quot;,
+&quot;19&quot;,
+&quot;23&quot;,
+&quot;29&quot;,
+&quot;31&quot;,
+&quot;37&quot;,
+&quot;41&quot;,
+&quot;43&quot;,
+&quot;47&quot;,
+&quot;53&quot;,
+&quot;59&quot;,
+&quot;61&quot;,
+&quot;67&quot;,
+&quot;71&quot;,
+&quot;73&quot;,
+&quot;79&quot;,
+&quot;83&quot;,
+&quot;89&quot;,
+&quot;97&quot;,
+&quot;101&quot;,
+&quot;103&quot;,
+&quot;107&quot;,
+&quot;109&quot;,
+&quot;113&quot;,
+&quot;127&quot;,
+&quot;131&quot;,
+&quot;137&quot;,
+&quot;139&quot;,
+&quot;149&quot;,
+&quot;151&quot;,
+&quot;157&quot;,
+&quot;163&quot;,
+&quot;167&quot;,
+&quot;173&quot;,
+&quot;179&quot;,
+&quot;181&quot;,
+&quot;191&quot;,
+&quot;193&quot;,
+&quot;197&quot;,
+&quot;199&quot;,
+&quot;211&quot;,
+&quot;223&quot;,
+&quot;227&quot;,
+&quot;229&quot;,
+&quot;233&quot;,
+&quot;239&quot;,
+&quot;241&quot;,
+&quot;251&quot;,
+&quot;257&quot;,
+&quot;263&quot;,
+&quot;269&quot;,
+&quot;271&quot;,
+&quot;277&quot;,
+&quot;281&quot;,
+&quot;283&quot;,
+&quot;293&quot;,
+&quot;307&quot;,
+&quot;311&quot;,
+&quot;313&quot;,
+&quot;317&quot;,
+&quot;331&quot;,
+&quot;337&quot;,
+&quot;347&quot;,
+&quot;349&quot;,
+&quot;353&quot;,
+&quot;359&quot;,
+&quot;367&quot;,
+&quot;373&quot;,
+&quot;379&quot;,
+&quot;383&quot;,
+&quot;389&quot;,
+&quot;397&quot;,
+&quot;401&quot;,
+&quot;409&quot;,
+&quot;419&quot;,
+&quot;421&quot;,
+&quot;431&quot;,
+&quot;433&quot;,
+&quot;439&quot;,
+&quot;443&quot;,
+&quot;449&quot;,
+&quot;457&quot;,
+&quot;461&quot;,
+&quot;463&quot;,
+&quot;467&quot;,
+&quot;479&quot;,
+&quot;487&quot;,
+&quot;491&quot;,
+&quot;499&quot;,
+&quot;503&quot;,
+&quot;509&quot;,
+&quot;521&quot;,
+&quot;523&quot;,
+&quot;541&quot;,
+&quot;547&quot;,
+&quot;557&quot;,
+&quot;563&quot;,
+&quot;569&quot;,
+&quot;571&quot;,
+&quot;577&quot;,
+&quot;587&quot;,
+&quot;593&quot;,
+&quot;599&quot;,
+&quot;601&quot;,
+&quot;607&quot;,
+&quot;613&quot;,
+&quot;617&quot;,
+&quot;619&quot;,
+&quot;631&quot;,
+&quot;641&quot;,
+&quot;643&quot;,
+&quot;647&quot;,
+&quot;653&quot;,
+&quot;659&quot;,
+&quot;661&quot;,
+&quot;673&quot;,
+&quot;677&quot;,
+&quot;683&quot;,
+&quot;691&quot;,
+&quot;701&quot;,
+&quot;709&quot;,
+&quot;719&quot;,
+&quot;727&quot;,
+&quot;733&quot;,
+&quot;739&quot;,
+&quot;743&quot;,
+&quot;751&quot;,
+&quot;757&quot;,
+&quot;761&quot;,
+&quot;769&quot;,
+&quot;773&quot;,
+&quot;787&quot;,
+&quot;797&quot;,
+&quot;809&quot;,
+&quot;811&quot;,
+&quot;821&quot;,
+&quot;823&quot;,
+&quot;827&quot;,
+&quot;829&quot;,
+&quot;839&quot;,
+&quot;853&quot;,
+&quot;857&quot;,
+&quot;859&quot;,
+&quot;863&quot;,
+&quot;877&quot;,
+&quot;881&quot;,
+&quot;883&quot;,
+&quot;887&quot;,
+&quot;907&quot;,
+&quot;911&quot;,
+&quot;919&quot;,
+&quot;929&quot;,
+&quot;937&quot;,
+&quot;941&quot;,
+&quot;947&quot;,
+&quot;953&quot;,
+&quot;967&quot;,
+&quot;971&quot;,
+&quot;977&quot;,
+&quot;983&quot;,
+&quot;991&quot;,
+&quot;997&quot;,
+&quot;1009&quot;,
+&quot;1013&quot;,
+&quot;1019&quot;,
+&quot;1021&quot;,
+&quot;1031&quot;,
+&quot;1033&quot;,
+&quot;1039&quot;,
+&quot;1049&quot;,
+&quot;1051&quot;,
+&quot;1061&quot;,
+&quot;1063&quot;,
+&quot;1069&quot;,
+&quot;1087&quot;,
+&quot;1091&quot;,
+&quot;1093&quot;,
+&quot;1097&quot;,
+&quot;1103&quot;,
+&quot;1109&quot;,
+&quot;1117&quot;,
+&quot;1123&quot;,
+&quot;1129&quot;,
+&quot;1151&quot;,
+&quot;1153&quot;,
+&quot;1163&quot;,
+&quot;1171&quot;,
+&quot;1181&quot;,
+&quot;1187&quot;,
+&quot;1193&quot;,
+&quot;1201&quot;,
+&quot;1213&quot;,
+&quot;1217&quot;,
+&quot;1223&quot;,
+&quot;1229&quot;,
+&quot;1231&quot;,
+&quot;1237&quot;,
+&quot;1249&quot;,
+&quot;1259&quot;,
+&quot;1277&quot;,
+&quot;1279&quot;,
+&quot;1283&quot;,
+&quot;1289&quot;,
+&quot;1291&quot;,
+&quot;1297&quot;,
+&quot;1301&quot;,
+&quot;1303&quot;,
+&quot;1307&quot;,
+&quot;1319&quot;,
+&quot;1321&quot;,
+&quot;1327&quot;,
+&quot;1361&quot;,
+&quot;1367&quot;,
+&quot;1373&quot;,
+&quot;1381&quot;,
+&quot;1399&quot;,
+&quot;1409&quot;,
+&quot;1423&quot;,
+&quot;1427&quot;,
+&quot;1429&quot;,
+&quot;1433&quot;,
+&quot;1439&quot;,
+&quot;1447&quot;,
+&quot;1451&quot;,
+&quot;1453&quot;,
+&quot;1459&quot;,
+&quot;1471&quot;,
+&quot;1481&quot;,
+&quot;1483&quot;,
+&quot;1487&quot;,
+&quot;1489&quot;,
+&quot;1493&quot;,
+&quot;1499&quot;,
+&quot;1511&quot;,
+&quot;1523&quot;,
+&quot;1531&quot;,
+&quot;1543&quot;,
+&quot;1549&quot;,
+&quot;1553&quot;,
+&quot;1559&quot;,
+&quot;1567&quot;,
+&quot;1571&quot;,
+&quot;1579&quot;,
+&quot;1583&quot;,
+&quot;1597&quot;,
+&quot;1601&quot;,
+&quot;1607&quot;,
+&quot;1609&quot;,
+&quot;1613&quot;,
+&quot;1619&quot;,
+&quot;1621&quot;,
+&quot;1627&quot;,
+&quot;1637&quot;,
+&quot;1657&quot;,
+&quot;1663&quot;,
+&quot;1667&quot;,
+&quot;1669&quot;,
+&quot;1693&quot;,
+&quot;1697&quot;,
+&quot;1699&quot;,
+&quot;1709&quot;,
+&quot;1721&quot;,
+&quot;1723&quot;,
+&quot;1733&quot;,
+&quot;1741&quot;,
+&quot;1747&quot;,
+&quot;1753&quot;,
+&quot;1759&quot;,
+&quot;1777&quot;,
+&quot;1783&quot;,
+&quot;1787&quot;,
+&quot;1789&quot;,
+&quot;1801&quot;,
+&quot;1811&quot;,
+&quot;1823&quot;,
+&quot;1831&quot;,
+&quot;1847&quot;,
+&quot;1861&quot;,
+&quot;1867&quot;,
+&quot;1871&quot;,
+&quot;1873&quot;,
+&quot;1877&quot;,
+&quot;1879&quot;,
+&quot;1889&quot;,
+&quot;1901&quot;,
+&quot;1907&quot;,
+&quot;1913&quot;,
+&quot;1931&quot;,
+&quot;1933&quot;,
+&quot;1949&quot;,
+&quot;1951&quot;,
+&quot;1973&quot;,
+&quot;1979&quot;,
+&quot;1987&quot;,
+&quot;1993&quot;,
+&quot;1997&quot;,
+&quot;1999&quot;,
+&quot;2003&quot;,
+&quot;2011&quot;,
+&quot;2017&quot;,
+&quot;2027&quot;,
+&quot;2029&quot;,
+&quot;2039&quot;,
+&quot;2053&quot;,
+&quot;2063&quot;,
+&quot;2069&quot;,
+&quot;2081&quot;,
+&quot;2083&quot;,
+&quot;2087&quot;,
+&quot;2089&quot;,
+&quot;2099&quot;,
+&quot;2111&quot;,
+&quot;2113&quot;,
+&quot;2129&quot;,
+&quot;2131&quot;,
+&quot;2137&quot;,
+&quot;2141&quot;,
+&quot;2143&quot;,
+&quot;2153&quot;,
+&quot;2161&quot;,
+&quot;2179&quot;,
+&quot;2203&quot;,
+&quot;2207&quot;,
+&quot;2213&quot;,
+&quot;2221&quot;,
+&quot;2237&quot;,
+&quot;2239&quot;,
+&quot;2243&quot;,
+&quot;2251&quot;,
+&quot;2267&quot;,
+&quot;2269&quot;,
+&quot;2273&quot;,
+&quot;2281&quot;,
+&quot;2287&quot;,
+&quot;2293&quot;,
+&quot;2297&quot;,
+&quot;2309&quot;,
+&quot;2311&quot;,
+&quot;2333&quot;,
+&quot;2339&quot;,
+&quot;2341&quot;,
+&quot;2347&quot;,
+&quot;2351&quot;,
+&quot;2357&quot;,
+&quot;2371&quot;,
+&quot;2377&quot;,
+&quot;2381&quot;,
+&quot;2383&quot;,
+&quot;2389&quot;,
+&quot;2393&quot;,
+&quot;2399&quot;,
+&quot;2411&quot;,
+&quot;2417&quot;,
+&quot;2423&quot;,
+&quot;2437&quot;,
+&quot;2441&quot;,
+&quot;2447&quot;,
+&quot;2459&quot;,
+&quot;2467&quot;,
+&quot;2473&quot;,
+&quot;2477&quot;,
+&quot;2503&quot;,
+&quot;2521&quot;,
+&quot;2531&quot;,
+&quot;2539&quot;,
+&quot;2543&quot;,
+&quot;2549&quot;,
+&quot;2551&quot;,
+&quot;2557&quot;,
+&quot;2579&quot;,
+&quot;2591&quot;,
+&quot;2593&quot;,
+&quot;2609&quot;,
+&quot;2617&quot;,
+&quot;2621&quot;,
+&quot;2633&quot;,
+&quot;2647&quot;,
+&quot;2657&quot;,
+&quot;2659&quot;,
+&quot;2663&quot;,
+&quot;2671&quot;,
+&quot;2677&quot;,
+&quot;2683&quot;,
+&quot;2687&quot;,
+&quot;2689&quot;,
+&quot;2693&quot;,
+&quot;2699&quot;,
+&quot;2707&quot;,
+&quot;2711&quot;,
+&quot;2713&quot;,
+&quot;2719&quot;,
+&quot;2729&quot;,
+&quot;2731&quot;,
+&quot;2741&quot;,
+&quot;2749&quot;,
+&quot;2753&quot;,
+&quot;2767&quot;,
+&quot;2777&quot;,
+&quot;2789&quot;,
+&quot;2791&quot;,
+&quot;2797&quot;,
+&quot;2801&quot;,
+&quot;2803&quot;,
+&quot;2819&quot;,
+&quot;2833&quot;,
+&quot;2837&quot;,
+&quot;2843&quot;,
+&quot;2851&quot;,
+&quot;2857&quot;,
+&quot;2861&quot;,
+&quot;2879&quot;,
+&quot;2887&quot;,
+&quot;2897&quot;,
+&quot;2903&quot;,
+&quot;2909&quot;,
+&quot;2917&quot;,
+&quot;2927&quot;,
+&quot;2939&quot;,
+&quot;2953&quot;,
+&quot;2957&quot;,
+&quot;2963&quot;,
+&quot;2969&quot;,
+&quot;2971&quot;,
+&quot;2999&quot;,
+&quot;3001&quot;,
+&quot;3011&quot;,
+&quot;3019&quot;,
+&quot;3023&quot;,
+&quot;3037&quot;,
+&quot;3041&quot;,
+&quot;3049&quot;,
+&quot;3061&quot;,
+&quot;3067&quot;,
+&quot;3079&quot;,
+&quot;3083&quot;,
+&quot;3089&quot;,
+&quot;3109&quot;,
+&quot;3119&quot;,
+&quot;3121&quot;,
+&quot;3137&quot;,
+&quot;3163&quot;,
+&quot;3167&quot;,
+&quot;3169&quot;,
+&quot;3181&quot;,
+&quot;3187&quot;,
+&quot;3191&quot;,
+&quot;3203&quot;,
+&quot;3209&quot;,
+&quot;3217&quot;,
+&quot;3221&quot;,
+&quot;3229&quot;,
+&quot;3251&quot;,
+&quot;3253&quot;,
+&quot;3257&quot;,
+&quot;3259&quot;,
+&quot;3271&quot;,
+&quot;3299&quot;,
+&quot;3301&quot;,
+&quot;3307&quot;,
+&quot;3313&quot;,
+&quot;3319&quot;,
+&quot;3323&quot;,
+&quot;3329&quot;,
+&quot;3331&quot;,
+&quot;3343&quot;,
+&quot;3347&quot;,
+&quot;3359&quot;,
+&quot;3361&quot;,
+&quot;3371&quot;,
+&quot;3373&quot;,
+&quot;3389&quot;,
+&quot;3391&quot;,
+&quot;3407&quot;,
+&quot;3413&quot;,
+&quot;3433&quot;,
+&quot;3449&quot;,
+&quot;3457&quot;,
+&quot;3461&quot;,
+&quot;3463&quot;,
+&quot;3467&quot;,
+&quot;3469&quot;,
+&quot;3491&quot;,
+&quot;3499&quot;,
+&quot;3511&quot;,
+&quot;3517&quot;,
+&quot;3527&quot;,
+&quot;3529&quot;,
+&quot;3533&quot;,
+&quot;3539&quot;,
+&quot;3541&quot;,
+&quot;3547&quot;,
+&quot;3557&quot;,
+&quot;3559&quot;,
+&quot;3571&quot;,
+&quot;3581&quot;,
+&quot;3583&quot;,
+&quot;3593&quot;,
+&quot;3607&quot;,
+&quot;3613&quot;,
+&quot;3617&quot;,
+&quot;3623&quot;,
+&quot;3631&quot;,
+&quot;3637&quot;,
+&quot;3643&quot;,
+&quot;3659&quot;,
+&quot;3671&quot;,
+&quot;3673&quot;,
+&quot;3677&quot;,
+&quot;3691&quot;,
+&quot;3697&quot;,
+&quot;3701&quot;,
+&quot;3709&quot;,
+&quot;3719&quot;,
+&quot;3727&quot;,
+&quot;3733&quot;,
+&quot;3739&quot;,
+&quot;3761&quot;,
+&quot;3767&quot;,
+&quot;3769&quot;,
+&quot;3779&quot;,
+&quot;3793&quot;,
+&quot;3797&quot;,
+&quot;3803&quot;,
+&quot;3821&quot;,
+&quot;3823&quot;,
+&quot;3833&quot;,
+&quot;3847&quot;,
+&quot;3851&quot;,
+&quot;3853&quot;,
+&quot;3863&quot;,
+&quot;3877&quot;,
+&quot;3881&quot;,
+&quot;3889&quot;,
+&quot;3907&quot;,
+&quot;3911&quot;,
+&quot;3917&quot;,
+&quot;3919&quot;,
+&quot;3923&quot;,
+&quot;3929&quot;,
+&quot;3931&quot;,
+&quot;3943&quot;,
+&quot;3947&quot;,
+&quot;3967&quot;,
+&quot;3989&quot;,
+&quot;4001&quot;,
+&quot;4003&quot;,
+&quot;4007&quot;,
+&quot;4013&quot;,
+&quot;4019&quot;,
+&quot;4021&quot;,
+&quot;4027&quot;,
+&quot;4049&quot;,
+&quot;4051&quot;,
+&quot;4057&quot;,
+&quot;4073&quot;,
+&quot;4079&quot;,
+&quot;4091&quot;,
+&quot;4093&quot;,
+&quot;4099&quot;,
+&quot;4111&quot;,
+&quot;4127&quot;,
+&quot;4129&quot;,
+&quot;4133&quot;,
+&quot;4139&quot;,
+&quot;4153&quot;,
+&quot;4157&quot;,
+&quot;4159&quot;,
+&quot;4177&quot;,
+&quot;4201&quot;,
+&quot;4211&quot;,
+&quot;4217&quot;,
+&quot;4219&quot;,
+&quot;4229&quot;,
+&quot;4231&quot;,
+&quot;4241&quot;,
+&quot;4243&quot;,
+&quot;4253&quot;,
+&quot;4259&quot;,
+&quot;4261&quot;,
+&quot;4271&quot;,
+&quot;4273&quot;,
+&quot;4283&quot;,
+&quot;4289&quot;,
+&quot;4297&quot;,
+&quot;4327&quot;,
+&quot;4337&quot;,
+&quot;4339&quot;,
+&quot;4349&quot;,
+&quot;4357&quot;,
+&quot;4363&quot;,
+&quot;4373&quot;,
+&quot;4391&quot;,
+&quot;4397&quot;,
+&quot;4409&quot;,
+&quot;4421&quot;,
+&quot;4423&quot;,
+&quot;4441&quot;,
+&quot;4447&quot;,
+&quot;4451&quot;,
+&quot;4457&quot;,
+&quot;4463&quot;,
+&quot;4481&quot;,
+&quot;4483&quot;,
+&quot;4493&quot;,
+&quot;4507&quot;,
+&quot;4513&quot;,
+&quot;4517&quot;,
+&quot;4519&quot;,
+&quot;4523&quot;,
+&quot;4547&quot;,
+&quot;4549&quot;,
+&quot;4561&quot;,
+&quot;4567&quot;,
+&quot;4583&quot;,
+&quot;4591&quot;,
+&quot;4597&quot;,
+&quot;4603&quot;,
+&quot;4621&quot;,
+&quot;4637&quot;,
+&quot;4639&quot;,
+&quot;4643&quot;,
+&quot;4649&quot;,
+&quot;4651&quot;,
+&quot;4657&quot;,
+&quot;4663&quot;,
+&quot;4673&quot;,
+&quot;4679&quot;,
+&quot;4691&quot;,
+&quot;4703&quot;,
+&quot;4721&quot;,
+&quot;4723&quot;,
+&quot;4729&quot;,
+&quot;4733&quot;,
+&quot;4751&quot;,
+&quot;4759&quot;,
+&quot;4783&quot;,
+&quot;4787&quot;,
+&quot;4789&quot;,
+&quot;4793&quot;,
+&quot;4799&quot;,
+&quot;4801&quot;,
+&quot;4813&quot;,
+&quot;4817&quot;,
+&quot;4831&quot;,
+&quot;4861&quot;,
+&quot;4871&quot;,
+&quot;4877&quot;,
+&quot;4889&quot;,
+&quot;4903&quot;,
+&quot;4909&quot;,
+&quot;4919&quot;,
+&quot;4931&quot;,
+&quot;4933&quot;,
+&quot;4937&quot;,
+&quot;4943&quot;,
+&quot;4951&quot;,
+&quot;4957&quot;,
+&quot;4967&quot;,
+&quot;4969&quot;,
+&quot;4973&quot;,
+&quot;4987&quot;,
+&quot;4993&quot;,
+&quot;4999&quot;,
+&quot;5003&quot;,
+&quot;5009&quot;,
+&quot;5011&quot;,
+&quot;5021&quot;,
+&quot;5023&quot;,
+&quot;5039&quot;,
+&quot;5051&quot;,
+&quot;5059&quot;,
+&quot;5077&quot;,
+&quot;5081&quot;,
+&quot;5087&quot;,
+&quot;5099&quot;,
+&quot;5101&quot;,
+&quot;5107&quot;,
+&quot;5113&quot;,
+&quot;5119&quot;,
+&quot;5147&quot;,
+&quot;5153&quot;,
+&quot;5167&quot;,
+&quot;5171&quot;,
+&quot;5179&quot;,
+&quot;5189&quot;,
+&quot;5197&quot;,
+&quot;5209&quot;,
+&quot;5227&quot;,
+&quot;5231&quot;,
+&quot;5233&quot;,
+&quot;5237&quot;,
+&quot;5261&quot;,
+&quot;5273&quot;,
+&quot;5279&quot;,
+&quot;5281&quot;,
+&quot;5297&quot;,
+&quot;5303&quot;,
+&quot;5309&quot;,
+&quot;5323&quot;,
+&quot;5333&quot;,
+&quot;5347&quot;,
+&quot;5351&quot;,
+&quot;5381&quot;,
+&quot;5387&quot;,
+&quot;5393&quot;,
+&quot;5399&quot;,
+&quot;5407&quot;,
+&quot;5413&quot;,
+&quot;5417&quot;,
+&quot;5419&quot;,
+&quot;5431&quot;,
+&quot;5437&quot;,
+&quot;5441&quot;,
+&quot;5443&quot;,
+&quot;5449&quot;,
+&quot;5471&quot;,
+&quot;5477&quot;,
+&quot;5479&quot;,
+&quot;5483&quot;,
+&quot;5501&quot;,
+&quot;5503&quot;,
+&quot;5507&quot;,
+&quot;5519&quot;,
+&quot;5521&quot;,
+&quot;5527&quot;,
+&quot;5531&quot;,
+&quot;5557&quot;,
+&quot;5563&quot;,
+&quot;5569&quot;,
+&quot;5573&quot;,
+&quot;5581&quot;,
+&quot;5591&quot;,
+&quot;5623&quot;,
+&quot;5639&quot;,
+&quot;5641&quot;,
+&quot;5647&quot;,
+&quot;5651&quot;,
+&quot;5653&quot;,
+&quot;5657&quot;,
+&quot;5659&quot;,
+&quot;5669&quot;,
+&quot;5683&quot;,
+&quot;5689&quot;,
+&quot;5693&quot;,
+&quot;5701&quot;,
+&quot;5711&quot;,
+&quot;5717&quot;,
+&quot;5737&quot;,
+&quot;5741&quot;,
+&quot;5743&quot;,
+&quot;5749&quot;,
+&quot;5779&quot;,
+&quot;5783&quot;,
+&quot;5791&quot;,
+&quot;5801&quot;,
+&quot;5807&quot;,
+&quot;5813&quot;,
+&quot;5821&quot;,
+&quot;5827&quot;,
+&quot;5839&quot;,
+&quot;5843&quot;,
+&quot;5849&quot;,
+&quot;5851&quot;,
+&quot;5857&quot;,
+&quot;5861&quot;,
+&quot;5867&quot;,
+&quot;5869&quot;,
+&quot;5879&quot;,
+&quot;5881&quot;,
+&quot;5897&quot;,
+&quot;5903&quot;,
+&quot;5923&quot;,
+&quot;5927&quot;,
+&quot;5939&quot;,
+&quot;5953&quot;,
+&quot;5981&quot;,
+&quot;5987&quot;,
+&quot;6007&quot;,
+&quot;6011&quot;,
+&quot;6029&quot;,
+&quot;6037&quot;,
+&quot;6043&quot;,
+&quot;6047&quot;,
+&quot;6053&quot;,
+&quot;6067&quot;,
+&quot;6073&quot;,
+&quot;6079&quot;,
+&quot;6089&quot;,
+&quot;6091&quot;,
+&quot;6101&quot;,
+&quot;6113&quot;,
+&quot;6121&quot;,
+&quot;6131&quot;,
+&quot;6133&quot;,
+&quot;6143&quot;,
+&quot;6151&quot;,
+&quot;6163&quot;,
+&quot;6173&quot;,
+&quot;6197&quot;,
+&quot;6199&quot;,
+&quot;6203&quot;,
+&quot;6211&quot;,
+&quot;6217&quot;,
+&quot;6221&quot;,
+&quot;6229&quot;,
+&quot;6247&quot;,
+&quot;6257&quot;,
+&quot;6263&quot;,
+&quot;6269&quot;,
+&quot;6271&quot;,
+&quot;6277&quot;,
+&quot;6287&quot;,
+&quot;6299&quot;,
+&quot;6301&quot;,
+&quot;6311&quot;,
+&quot;6317&quot;,
+&quot;6323&quot;,
+&quot;6329&quot;,
+&quot;6337&quot;,
+&quot;6343&quot;,
+&quot;6353&quot;,
+&quot;6359&quot;,
+&quot;6361&quot;,
+&quot;6367&quot;,
+&quot;6373&quot;,
+&quot;6379&quot;,
+&quot;6389&quot;,
+&quot;6397&quot;,
+&quot;6421&quot;,
+&quot;6427&quot;,
+&quot;6449&quot;,
+&quot;6451&quot;,
+&quot;6469&quot;,
+&quot;6473&quot;,
+&quot;6481&quot;,
+&quot;6491&quot;,
+&quot;6521&quot;,
+&quot;6529&quot;,
+&quot;6547&quot;,
+&quot;6551&quot;,
+&quot;6553&quot;,
+&quot;6563&quot;,
+&quot;6569&quot;,
+&quot;6571&quot;,
+&quot;6577&quot;,
+&quot;6581&quot;,
+&quot;6599&quot;,
+&quot;6607&quot;,
+&quot;6619&quot;,
+&quot;6637&quot;,
+&quot;6653&quot;,
+&quot;6659&quot;,
+&quot;6661&quot;,
+&quot;6673&quot;,
+&quot;6679&quot;,
+&quot;6689&quot;,
+&quot;6691&quot;,
+&quot;6701&quot;,
+&quot;6703&quot;,
+&quot;6709&quot;,
+&quot;6719&quot;,
+&quot;6733&quot;,
+&quot;6737&quot;,
+&quot;6761&quot;,
+&quot;6763&quot;,
+&quot;6779&quot;,
+&quot;6781&quot;,
+&quot;6791&quot;,
+&quot;6793&quot;,
+&quot;6803&quot;,
+&quot;6823&quot;,
+&quot;6827&quot;,
+&quot;6829&quot;,
+&quot;6833&quot;,
+&quot;6841&quot;,
+&quot;6857&quot;,
+&quot;6863&quot;,
+&quot;6869&quot;,
+&quot;6871&quot;,
+&quot;6883&quot;,
+&quot;6899&quot;,
+&quot;6907&quot;,
+&quot;6911&quot;,
+&quot;6917&quot;,
+&quot;6947&quot;,
+&quot;6949&quot;,
+&quot;6959&quot;,
+&quot;6961&quot;,
+&quot;6967&quot;,
+&quot;6971&quot;,
+&quot;6977&quot;,
+&quot;6983&quot;,
+&quot;6991&quot;,
+&quot;6997&quot;,
+&quot;7001&quot;,
+&quot;7013&quot;,
+&quot;7019&quot;,
+&quot;7027&quot;,
+&quot;7039&quot;,
+&quot;7043&quot;,
+&quot;7057&quot;,
+&quot;7069&quot;,
+&quot;7079&quot;,
+&quot;7103&quot;,
+&quot;7109&quot;,
+&quot;7121&quot;,
+&quot;7127&quot;,
+&quot;7129&quot;,
+&quot;7151&quot;,
+&quot;7159&quot;,
+&quot;7177&quot;,
+&quot;7187&quot;,
+&quot;7193&quot;,
+&quot;7207&quot;,
+&quot;7211&quot;,
+&quot;7213&quot;,
+&quot;7219&quot;,
+&quot;7229&quot;,
+&quot;7237&quot;,
+&quot;7243&quot;,
+&quot;7247&quot;,
+&quot;7253&quot;,
+&quot;7283&quot;,
+&quot;7297&quot;,
+&quot;7307&quot;,
+&quot;7309&quot;,
+&quot;7321&quot;,
+&quot;7331&quot;,
+&quot;7333&quot;,
+&quot;7349&quot;,
+&quot;7351&quot;,
+&quot;7369&quot;,
+&quot;7393&quot;,
+&quot;7411&quot;,
+&quot;7417&quot;,
+&quot;7433&quot;,
+&quot;7451&quot;,
+&quot;7457&quot;,
+&quot;7459&quot;,
+&quot;7477&quot;,
+&quot;7481&quot;,
+&quot;7487&quot;,
+&quot;7489&quot;,
+&quot;7499&quot;,
+&quot;7507&quot;,
+&quot;7517&quot;,
+&quot;7523&quot;,
+&quot;7529&quot;,
+&quot;7537&quot;,
+&quot;7541&quot;,
+&quot;7547&quot;,
+&quot;7549&quot;,
+&quot;7559&quot;,
+&quot;7561&quot;,
+&quot;7573&quot;,
+&quot;7577&quot;,
+&quot;7583&quot;,
+&quot;7589&quot;,
+&quot;7591&quot;,
+&quot;7603&quot;,
+&quot;7607&quot;,
+&quot;7621&quot;,
+&quot;7639&quot;,
+&quot;7643&quot;,
+&quot;7649&quot;,
+&quot;7669&quot;,
+&quot;7673&quot;,
+&quot;7681&quot;,
+&quot;7687&quot;,
+&quot;7691&quot;,
+&quot;7699&quot;,
+&quot;7703&quot;,
+&quot;7717&quot;,
+&quot;7723&quot;,
+&quot;7727&quot;,
+&quot;7741&quot;,
+&quot;7753&quot;,
+&quot;7757&quot;,
+&quot;7759&quot;,
+&quot;7789&quot;,
+&quot;7793&quot;,
+&quot;7817&quot;,
+&quot;7823&quot;,
+&quot;7829&quot;,
+&quot;7841&quot;,
+&quot;7853&quot;,
+&quot;7867&quot;,
+&quot;7873&quot;,
+&quot;7877&quot;,
+&quot;7879&quot;,
+&quot;7883&quot;,
+&quot;7901&quot;,
+&quot;7907&quot;,
+&quot;7919&quot;,
+&quot;7927&quot;,
+&quot;7933&quot;,
+&quot;7937&quot;,
+&quot;7949&quot;,
+&quot;7951&quot;,
+&quot;7963&quot;,
+&quot;7993&quot;,
+&quot;8009&quot;,
+&quot;8011&quot;,
+&quot;8017&quot;,
+&quot;8039&quot;,
+&quot;8053&quot;,
+&quot;8059&quot;,
+&quot;8069&quot;,
+&quot;8081&quot;,
+&quot;8087&quot;,
+&quot;8089&quot;,
+&quot;8093&quot;,
+&quot;8101&quot;,
+&quot;8111&quot;,
+&quot;8117&quot;,
+&quot;8123&quot;,
+&quot;8147&quot;,
+&quot;8161&quot;,
+&quot;8167&quot;,
+&quot;8171&quot;,
+&quot;8179&quot;,
+&quot;8191&quot;,
+&quot;8209&quot;,
+&quot;8219&quot;,
+&quot;8221&quot;,
+&quot;8231&quot;,
+&quot;8233&quot;,
+&quot;8237&quot;,
+&quot;8243&quot;,
+&quot;8263&quot;,
+&quot;8269&quot;,
+&quot;8273&quot;,
+&quot;8287&quot;,
+&quot;8291&quot;,
+&quot;8293&quot;,
+&quot;8297&quot;,
+&quot;8311&quot;,
+&quot;8317&quot;,
+&quot;8329&quot;,
+&quot;8353&quot;,
+&quot;8363&quot;,
+&quot;8369&quot;,
+&quot;8377&quot;,
+&quot;8387&quot;,
+&quot;8389&quot;,
+&quot;8419&quot;,
+&quot;8423&quot;,
+&quot;8429&quot;,
+&quot;8431&quot;,
+&quot;8443&quot;,
+&quot;8447&quot;,
+&quot;8461&quot;,
+&quot;8467&quot;,
+&quot;8501&quot;,
+&quot;8513&quot;,
+&quot;8521&quot;,
+&quot;8527&quot;,
+&quot;8537&quot;,
+&quot;8539&quot;,
+&quot;8543&quot;,
+&quot;8563&quot;,
+&quot;8573&quot;,
+&quot;8581&quot;,
+&quot;8597&quot;,
+&quot;8599&quot;,
+&quot;8609&quot;,
+&quot;8623&quot;,
+&quot;8627&quot;,
+&quot;8629&quot;,
+&quot;8641&quot;,
+&quot;8647&quot;,
+&quot;8663&quot;,
+&quot;8669&quot;,
+&quot;8677&quot;,
+&quot;8681&quot;,
+&quot;8689&quot;,
+&quot;8693&quot;,
+&quot;8699&quot;,
+&quot;8707&quot;,
+&quot;8713&quot;,
+&quot;8719&quot;,
+&quot;8731&quot;,
+&quot;8737&quot;,
+&quot;8741&quot;,
+&quot;8747&quot;,
+&quot;8753&quot;,
+&quot;8761&quot;,
+&quot;8779&quot;,
+&quot;8783&quot;,
+&quot;8803&quot;,
+&quot;8807&quot;,
+&quot;8819&quot;,
+&quot;8821&quot;,
+&quot;8831&quot;,
+&quot;8837&quot;,
+&quot;8839&quot;,
+&quot;8849&quot;,
+&quot;8861&quot;,
+&quot;8863&quot;,
+&quot;8867&quot;,
+&quot;8887&quot;,
+&quot;8893&quot;,
+&quot;8923&quot;,
+&quot;8929&quot;,
+&quot;8933&quot;,
+&quot;8941&quot;,
+&quot;8951&quot;,
+&quot;8963&quot;,
+&quot;8969&quot;,
+&quot;8971&quot;,
+&quot;8999&quot;,
+&quot;9001&quot;,
+&quot;9007&quot;,
+&quot;9011&quot;,
+&quot;9013&quot;,
+&quot;9029&quot;,
+&quot;9041&quot;,
+&quot;9043&quot;,
+&quot;9049&quot;,
+&quot;9059&quot;,
+&quot;9067&quot;,
+&quot;9091&quot;,
+&quot;9103&quot;,
+&quot;9109&quot;,
+&quot;9127&quot;,
+&quot;9133&quot;,
+&quot;9137&quot;,
+&quot;9151&quot;,
+&quot;9157&quot;,
+&quot;9161&quot;,
+&quot;9173&quot;,
+&quot;9181&quot;,
+&quot;9187&quot;,
+&quot;9199&quot;,
+&quot;9203&quot;,
+&quot;9209&quot;,
+&quot;9221&quot;,
+&quot;9227&quot;,
+&quot;9239&quot;,
+&quot;9241&quot;,
+&quot;9257&quot;,
+&quot;9277&quot;,
+&quot;9281&quot;,
+&quot;9283&quot;,
+&quot;9293&quot;,
+&quot;9311&quot;,
+&quot;9319&quot;,
+&quot;9323&quot;,
+&quot;9337&quot;,
+&quot;9341&quot;,
+&quot;9343&quot;,
+&quot;9349&quot;,
+&quot;9371&quot;,
+&quot;9377&quot;,
+&quot;9391&quot;,
+&quot;9397&quot;,
+&quot;9403&quot;,
+&quot;9413&quot;,
+&quot;9419&quot;,
+&quot;9421&quot;,
+&quot;9431&quot;,
+&quot;9433&quot;,
+&quot;9437&quot;,
+&quot;9439&quot;,
+&quot;9461&quot;,
+&quot;9463&quot;,
+&quot;9467&quot;,
+&quot;9473&quot;,
+&quot;9479&quot;,
+&quot;9491&quot;,
+&quot;9497&quot;,
+&quot;9511&quot;,
+&quot;9521&quot;,
+&quot;9533&quot;,
+&quot;9539&quot;,
+&quot;9547&quot;,
+&quot;9551&quot;,
+&quot;9587&quot;,
+&quot;9601&quot;,
+&quot;9613&quot;,
+&quot;9619&quot;,
+&quot;9623&quot;,
+&quot;9629&quot;,
+&quot;9631&quot;,
+&quot;9643&quot;,
+&quot;9649&quot;,
+&quot;9661&quot;,
+&quot;9677&quot;,
+&quot;9679&quot;,
+&quot;9689&quot;,
+&quot;9697&quot;,
+&quot;9719&quot;,
+&quot;9721&quot;,
+&quot;9733&quot;,
+&quot;9739&quot;,
+&quot;9743&quot;,
+&quot;9749&quot;,
+&quot;9767&quot;,
+&quot;9769&quot;,
+&quot;9781&quot;,
+&quot;9787&quot;,
+&quot;9791&quot;,
+&quot;9803&quot;,
+&quot;9811&quot;,
+&quot;9817&quot;,
+&quot;9829&quot;,
+&quot;9833&quot;,
+&quot;9839&quot;,
+&quot;9851&quot;,
+&quot;9857&quot;,
+&quot;9859&quot;,
+&quot;9871&quot;,
+&quot;9883&quot;,
+&quot;9887&quot;,
+&quot;9901&quot;,
+&quot;9907&quot;,
+&quot;9923&quot;,
+&quot;9929&quot;,
+&quot;9931&quot;,
+&quot;9941&quot;,
+&quot;9949&quot;,
+&quot;9967&quot;,
+&quot;9973&quot;]
+
+            </code></pre>
+          </div>
+        </li>
+      
+    
+      
+      <li class="w3-theme">functions</li>
+      
+      
+        <li>
+          <span class="expand-detailbox">+</span>
+          <span>
+            <a href="/nb/gaussian.json" target="_blank"><b>gaussian.json</b></a><i data-target-url="https://pentagonitestudios.com/nb/gaussian" class="copybtn fa fa-clipboard"></i>: <span class="command-description"><p>creates a variable “<em>gaus</em>” with a normal distribution from (0,1) //originally made by joshuakcockrell on stackoverflow, adapted by gem</p>
+</span>
+          </span>
+          <div class="command-detailbox">
+            
+            
+            <p>variables: <code>gaus</code></p>
+            <pre><code class="language-javascript">
+              var gaus=-1;
+while(gaus&gt;1||gaus&lt;0){
+	let u=0;
+ 	let v=0;
+	while(u === 0) u = Math.random();
+	while(v === 0) v = Math.random();
+	gaus = Math.sqrt(-2.0*Math.log(u))*Math.cos(2.0*Math.PI*v);
+	gaus = gaus / 10.0 + 0.5;
+}
+
+            </code></pre>
+          </div>
+        </li>
+      
+        <li>
+          <span class="expand-detailbox">+</span>
+          <span>
+            <a href="/nb/typo_0.json" target="_blank"><b>typo_0.json</b></a><i data-target-url="https://pentagonitestudios.com/nb/typo_0" class="copybtn fa fa-clipboard"></i>: <span class="command-description"><p>requires an input string “<em>text</em>” that will then be output with a random number of typos. Original iteration that swaps and duplicates some letters</p>
+</span>
+          </span>
+          <div class="command-detailbox">
+            
+            
+            <p>variables: <code>words</code>, <code>text</code></p>
+            <pre><code class="language-javascript">
+              words = text.split(' ');
+for(i=0;i&lt;words.length;i++){
+	ltrs = words[i].split('');
+	for(j=1;j&lt;ltrs.length-1;j++){
+		if(Math.random()&lt;0.15){
+			if(Math.random()&lt;0.7){
+				tmp=ltrs[j];
+				ltrs[j]=ltrs[j+1];
+				ltrs[j+1]=tmp;
+				j++;
+			}else{
+				ltrs[j]+=ltrs[j];
+			}
+		}
+	}
+	words[i]=ltrs.join('');
+}
+text=words.join(' ');
+text
+
+            </code></pre>
+          </div>
+        </li>
+      
+    
+      
+      <li class="w3-theme">specific commands</li>
+      
+      
+        <li>
+          <span class="expand-detailbox">+</span>
+          <span>
+            <a href="/nb/fish_0.json" target="_blank"><b>fish_0.json</b></a><i data-target-url="https://pentagonitestudios.com/nb/fish_0" class="copybtn fa fa-clipboard"></i>: <span class="command-description"><p>The original fish code! (with some added functionality to work with the current command) just change <code class="language-plaintext highlighter-rouge">fish_1.json</code> to <code class="language-plaintext highlighter-rouge">fish_0.json</code> to use the legacy code</p>
+</span>
+          </span>
+          <div class="command-detailbox">
+            
+            
+            <p>variables: <code>fsh</code>, <code>msg</code>, <code>sz</code>, <code>fishoutput</code></p>
+            <pre><code class="language-javascript">
+              fsh = 5 + Math.random()*95;
+const msg=[&quot;Teeny fish! 🐟 &quot;,
+&quot;Not bad! lycelYes &quot;,
+&quot;What a catch! lycelYay &quot;,
+&quot;That's a big 'un lycelCool &quot;
+];
+sz=0;
+fishoutput=&quot; &quot;;
+if((Math.random() + fsh/300) &lt; 0.9){
+	if(fsh&gt;75){
+		sz=3;
+	}else if(fsh&gt;50){
+		sz=2;
+	}else if(fsh&gt;25){
+		sz=1;
+	}
+	fsh=fsh/10;
+	fishoutput = user+&quot; caught a fish of &quot;+fsh.toFixed(2)+&quot;kg! (&quot;+(fsh*2.20462).toFixed(2)+&quot;lbs) &quot;+msg[sz];
+}else{
+	fishoutput = &quot;Oh no! The fish escaped!! smolPanic &quot;;
+}
+
+            </code></pre>
+          </div>
+        </li>
+      
+        <li>
+          <span class="expand-detailbox">+</span>
+          <span>
+            <a href="/nb/fish_1.json" target="_blank"><b>fish_1.json</b></a><i data-target-url="https://pentagonitestudios.com/nb/fish_1" class="copybtn fa fa-clipboard"></i>: <span class="command-description"><p>2021, Feb 08 update: fish are now generated based on a normal distribution. Use <strong><a href="fishcommand.txt">this</a></strong> as the contents of the nightbot command</p>
+</span>
+          </span>
+          <div class="command-detailbox">
+            
+            
+            <p>variables: <code>gaus</code>, <code>fsh</code>, <code>msg</code>, <code>sz</code>, <code>fishoutput</code></p>
+            <pre><code class="language-javascript">
+              var gaus=-5;
+while(gaus&gt;25||gaus&lt;-4.5){
+	let u=0;
+ 	let v=0;
+	while(u === 0) u = Math.random();
+	while(v === 0) v = Math.random();
+	gaus = Math.sqrt(-2.0*Math.log(u))*Math.cos(2.0*Math.PI*v);
+	gaus = gaus*2.75;
+}
+fsh = 5+ gaus;
+const msg=[&quot;Teeny fish! lycelGib &quot;,
+&quot;Oh, I caught one lycelWhatif &quot;,
+&quot;Okay lycelIdk &quot;,
+&quot;Not bad! lycelYes &quot;,
+&quot;Pretty good! lycelCool &quot;,
+&quot;What a catch! lycelYay &quot;,
+&quot;That's a big 'un lycelAAA &quot;,
+&quot;Those are rare! lycelBlush &quot;,
+&quot;lycelW lycelW lycelW &quot;];
+sz=0;
+fishoutput=&quot; &quot;;
+if((Math.random())&lt;0.9){
+	if(fsh&gt;20.0){
+		sz=8;
+	}else if(fsh&gt;10.0){
+		sz=7;
+	}else if(fsh&gt;7.5){
+		sz=6;
+	}else if(fsh&gt;6.25){
+		sz=5;
+	}else if(fsh&gt;5.25){
+		sz=4;
+	}else if(fsh&gt;4.75){
+		sz=3;
+	}else if(fsh&gt;3.75){
+		sz=2;
+	}else if(fsh&gt;2.5){
+		sz=1;
+	}
+	fishoutput = user+&quot; caught a fish of &quot;+fsh.toFixed(2)+&quot;kg! (&quot;+(fsh*2.20462).toFixed(2)+&quot;lbs) &quot;+msg[sz];
+}else{
+	fishoutput = &quot;Oh no! The fish escaped!! lycelHands &quot;;
+}
+
+            </code></pre>
+          </div>
+        </li>
+      
+        <li>
+          <span class="expand-detailbox">+</span>
+          <span>
+            <a href="/nb/fish_off.json" target="_blank"><b>fish_off.json</b></a><i data-target-url="https://pentagonitestudios.com/nb/fish_off" class="copybtn fa fa-clipboard"></i>: <span class="command-description"><p>change <code class="language-plaintext highlighter-rouge">fish_[x].json</code> (x being version number) to <code class="language-plaintext highlighter-rouge">fish_off.json</code> to disable fishing without deleting the command</p>
+</span>
+          </span>
+          <div class="command-detailbox">
+            
+            
+            <p>variables: <code>fishoutput</code></p>
+            <pre><code class="language-javascript">
+              fishoutput=&quot;!fish is closed. Thanks for fishing with us!! kaestr1Hug&quot;
+
+            </code></pre>
+          </div>
+        </li>
+      
+    
+      
+      <li class="w3-theme">for testing only</li>
+      
+      
+        <li>
+          <span class="expand-detailbox">+</span>
+          <span>
+            <a href="/nb/test.json" target="_blank"><b>test.json</b></a><i data-target-url="https://pentagonitestudios.com/nb/test" class="copybtn fa fa-clipboard"></i>: <span class="command-description"><p>this is just a single json with a const array “texttest”</p>
+</span>
+          </span>
+          <div class="command-detailbox">
+            
+            
+            <p>variables: <code>testtext</code></p>
+            <pre><code class="language-javascript">
+              const testtext=[&quot;test&quot;,&quot;testing&quot;]
+
+            </code></pre>
+          </div>
+        </li>
+      
+        <li>
+          <span class="expand-detailbox">+</span>
+          <span>
+            <a href="/nb/gaboemote.json" target="_blank"><b>gaboemote.json</b></a><i data-target-url="https://pentagonitestudios.com/nb/gaboemote" class="copybtn fa fa-clipboard"></i>: <span class="command-description"><p>a long array of emotes Gabo sent me. array’s name is “emotes”</p>
+</span>
+          </span>
+          <div class="command-detailbox">
+            
+            
+            <p>variables: <code>emotes</code></p>
+            <pre><code class="language-javascript">
+              const emotes=['kaestr1Cool',
+'kaestr1Hug',
+'maizCool',
+'abbybaCool',
+'smolCool',
+'lycelCool',
+'therea1896Cool',
+'smolCheese',
+'kaestr1Hug',
+'abbybaHug',
+'elizab34Uwu',
+'pointcrowHug',
+'linkusHug',
+'kaestr1Cool',
+'kaestr1Cool',
+'kaestr1Cool',
+'maizCool',
+'abbybaCool',
+'smolCool',
+'lycelCool',
+'kaestr1Cry',
+'kaestr1Cry',
+'kaestr1Cry',
+'elizab34Hands',
+'lycelHands',
+'smolHands',
+'tomshi1Cry',
+'abbybaCry',
+'archit3Cry',
+'linkusCry',
+'pcrowCry',
+'smolCry',
+'kaestr1Cool',
+'kaestr1Hug',
+'maizCool',
+'abbybaCool',
+'smolCool',
+'lycelCool',
+'lycelYes',
+'therea1896Cool',
+'smolCheese',
+'abbybaHug',
+'elizab34Uwu',
+'pcrowHug',
+'pcrowEyes',
+'bryce4Eyes',
+'hypoth7Eyes',
+'cjyaEyes',
+'lycelEyes',
+'snazjdEyes',
+'maizEyes',
+'archit3Eyes',
+'smolEyes',
+'abbybaTea',
+'lycelW',
+'paintbNoScuff',
+'pcrowO',
+'maizFlushed',
+'pcrowW',
+'lycelGaze',
+'pcrowEyes',
+'bryce4Eyes',
+'cjyaEyes',
+'lycelEyes',
+'maizEyes',
+'archit3Eyes',
+'smolEyes',
+'abbybaTea',
+'lycelW',
+'paintbNoScuff',
+'pcrowO',
+'maizFlushed',
+'pcrowW',
+'lycelGaze',
+'abibeaLurk']
+
+            </code></pre>
+          </div>
+        </li>
+      
+    
   </ul>
 </div>
 
@@ -116,3 +1822,21 @@ for (var i = 0; i < cpybtns.length; i++) {
 var mybtn = document.getElementsByClassName("testbtn")[0];
 mybtn.click();
 </script>
+
+
+    <!-- Footer -->
+    <footer class="w3-container w3-theme-dark">
+      <h3>Credits n' such</h3>
+      <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+      <div style="position:relative;bottom:55px;" class="w3-tooltip w3-right">
+        <span class="w3-text w3-theme w3-padding">Go To Top</span>&nbsp;
+        <a class="w3-text-white" href="#"><span class="w3-xlarge">
+        <i class="fa fa-chevron-circle-up"></i></span></a>
+      </div>
+      <p><a href="https://www.w3schools.com/w3css/w3css_references.asp" class="w3-btn w3-theme" target="_blank">W3.CSS Reference</a></p>
+      <p>edited/adapted by Gem!</p>
+	  <p>optimizations and usability improvements by <a href="https://github.com/thesecretmaster" target="_blank">thesecretmaster</a>!</p>
+      <p style="padding-bottom:2vh">Hosted by Github pages</p>
+    </footer>
+  </body>
+</html>
