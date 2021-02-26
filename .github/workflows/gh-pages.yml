@@ -19,7 +19,8 @@ jobs:
         run: |
           mkdir $GITHUB_WORKSPACE/../jekyll_build
           cd $GITHUB_WORKSPACE/../jekyll_build
-          git clone --branch $remote_branch https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git .
+          git clone https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git .
+          git switch -c $remote_branch
           touch .nojekyll
           bundle exec jekyll build -s $GITHUB_WORKSPACE -d $GITHUB_WORKSPACE/../jekyll_build
           git config user.name "$GITHUB_ACTOR" && \
