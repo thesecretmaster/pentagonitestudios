@@ -23,12 +23,12 @@ jobs:
           cd $GITHUB_WORKSPACE/../jekyll_build
           git clone https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git .
           git switch -c $remote_branch
-          git pull -u origin/$remote_branch $remote_branch
-          touch .nojekyll
+          git branch --set-upstream-to=origin/$remote_branch $remote_branch
           cd $GITHUB_WORKSPACE
           curl -H "Accept: application/vnd.github.v3+json" https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@api.github.com/repos/$GITHUB_REPOSITORY/pages | jq .source.path
           bundle exec jekyll build -b $(curl -H "Accept: application/vnd.github.v3+json" https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@api.github.com/repos/$GITHUB_REPOSITORY/pages | jq -r .source.path) -s $GITHUB_WORKSPACE -d $GITHUB_WORKSPACE/../jekyll_build
           cd $GITHUB_WORKSPACE/../jekyll_build
+          touch .nojekyll
           git config user.name "$GITHUB_ACTOR" && \
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com" && \
           git add . && \
