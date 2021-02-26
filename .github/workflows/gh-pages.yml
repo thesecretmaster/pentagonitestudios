@@ -15,7 +15,7 @@ jobs:
           ruby-version: 2.7.0
           bundler-cache: true
       - name: Install dependency
-        run: apt-get install jq
+        run: sudo apt-get install jq
       - name: Build + Deploy Jekyll
         shell: bash
         run: |
