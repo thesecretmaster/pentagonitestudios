@@ -7,7 +7,7 @@ title: Gem's other website!
 <header class="w3-container w3-theme w3-padding" id="myHeader">
   <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i>
   <div class="w3-center">
-  <h1 class="w3-xxxlarge w3-animate-bottom" style="padding-bottom: 5vh">Nightbot-specific .jsons</h1>
+  <h1 class="w3-xxxlarge w3-animate-bottom" style="padding-bottom: 5vh">Nightbot Command Files</h1>
   </div>
 </header>
 
@@ -59,9 +59,7 @@ title: Gem's other website!
               {% assign formatted_vars = formatted_vars | push: formatted_var %}
             {% endfor %}
             <p>variables: {{ formatted_vars | join: ", "}}</p>
-            <pre><code class="language-javascript">
-              {{ pg | xml_escape }}
-            </code></pre>
+            {% highlight js %}{{ pg | xml_escape }}{% endhighlight %}
           </div>
         </li>
       {% endfor %}
@@ -69,15 +67,7 @@ title: Gem's other website!
   </ul>
 </div>
 
-<link rel="stylesheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/default.min.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
 <script>
-document.addEventListener('DOMContentLoaded', (event) => {
-  document.querySelectorAll('pre code').forEach((block) => {
-    hljs.highlightBlock(block);
-  });
-});
 var coll = document.getElementsByClassName("expand-detailbox");
 var i;
 
