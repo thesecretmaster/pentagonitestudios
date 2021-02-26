@@ -3,9 +3,9 @@
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>W3.CSS Template</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="./original_template_files/w3.css">
-<link rel="stylesheet" href="./original_template_files/w3-theme-teal.css">
-<link rel="stylesheet" href="./original_template_files/font-awesome.min.css">
+<link rel="stylesheet" href="{% link original_template_files/w3.css %}">
+<link rel="stylesheet" href="{% link original_template_files/w3-theme-teal.css %}">
+<link rel="stylesheet" href="{% link original_template_files/font-awesome.min.css %}">
 <link id="avast_os_ext_custom_font" href="chrome-extension://eofcbnmajmjmplflapaojjnihcjkigck/common/ui/fonts/fonts.css" rel="stylesheet" type="text/css"><style type="text/css">.backpack.dropzone {
   font-family: 'SF UI Display', 'Segoe UI';
   font-size: 15px;
@@ -76,7 +76,7 @@
 
 <!-- Header -->
 <header class="w3-container w3-theme w3-padding" id="myHeader">
-  <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> 
+  <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i>
   <div class="w3-center">
   <h4>BEAUTIFUL RESPONSIVE WEB SITES</h4>
   <h1 class="w3-xxxlarge w3-animate-bottom">BUILT WITH W3.CSS</h1>
@@ -89,7 +89,7 @@
 <!-- Modal -->
 <div id="id01" class="w3-modal">
     <div class="w3-modal-content w3-card-4 w3-animate-top">
-      <header class="w3-container w3-theme"> 
+      <header class="w3-container w3-theme">
         <span onclick="document.getElementById(&#39;id01&#39;).style.display=&#39;none&#39;" class="w3-button w3-display-topright">×</span>
         <h4>Oh snap! We just showed you a modal..</h4>
         <h5>Because we can <i class="fa fa-smile-o"></i></h5>
@@ -163,52 +163,52 @@
 
 <div class="w3-row w3-border">
   <div class="w3-half w3-container w3-blue w3-border">
-    <h5>w3-half</h5>  
+    <h5>w3-half</h5>
     <p>The w3-half class uses half (50%) of the screen window.</p>
     <p>On small screens (max 600 pixels) it automatically resizes to full screen width.</p>
   </div>
   <div class="w3-half w3-container">
-    <h5>w3-half</h5>  
+    <h5>w3-half</h5>
   </div>
 </div>
 <br>
 
 <div class="w3-row w3-border">
   <div class="w3-third w3-container w3-green">
-    <h5>w3-third</h5>  
+    <h5>w3-third</h5>
     <p>The w3-third class uses one third (33.33%) of the screen widow.</p>
     <p>On small screens (max 600 pixels) it automatically resizes to full screen width.</p>
   </div>
   <div class="w3-third w3-container">
-    <h5>w3-third</h5>  
+    <h5>w3-third</h5>
   </div>
   <div class="w3-third w3-container">
-    <h5>w3-third</h5>  
+    <h5>w3-third</h5>
   </div>
 </div>
 <br>
 
 <div class="w3-row w3-border">
   <div class="w3-quarter w3-container w3-red">
-    <h5>w3-quarter</h5>  
+    <h5>w3-quarter</h5>
     <p>The w3-quarter class uses one quarter (25%) of the screen window.</p>
     <p>On small screens (max 600 pixels) it automatically resizes to full screen width.</p>
   </div>
   <div class="w3-quarter w3-container">
-    <h5>w3-quarter</h5>  
+    <h5>w3-quarter</h5>
   </div>
   <div class="w3-quarter w3-container">
-    <h5>w3-quarter</h5>  
+    <h5>w3-quarter</h5>
   </div>
   <div class="w3-quarter w3-container">
-    <h5>w3-quarter</h5>  
+    <h5>w3-quarter</h5>
   </div>
-</div> 
-     
+</div>
+
 <div class="w3-center">
   <h2>Containers</h2>
   <p>Use containers to create headers, sections and footers.</p>
-</div>   
+</div>
 
 <header class="w3-container w3-blue-grey">
   <h2>Header</h2>
@@ -296,7 +296,7 @@
   <h3>Paper-like Cards with Shadows</h3>
 </div>
 
-<div class="w3-row-padding"> 
+<div class="w3-row-padding">
 
 <div class="w3-third">
 <div class="w3-card">
@@ -370,15 +370,15 @@
 <div class="w3-half">
 <form class="w3-container w3-card-4">
   <h2>Input Form</h2>
-  <div class="w3-section">      
+  <div class="w3-section">
     <input class="w3-input" type="text" required="">
     <label>Name</label>
   </div>
-  <div class="w3-section">      
+  <div class="w3-section">
     <input class="w3-input" type="text" required="">
     <label>Email</label>
   </div>
-  <div class="w3-section">      
+  <div class="w3-section">
     <input class="w3-input" type="text" required="">
     <label>Subject</label>
   </div>
@@ -437,7 +437,7 @@
   <div id="myBar" class="w3-container w3-theme w3-padding" style="width:1%">0</div>
 </div><br>
 
-<button class="w3-btn w3-theme" onclick="move()">Click Me</button> 
+<button class="w3-btn w3-theme" onclick="move()">Click Me</button>
 </div>
 <hr>
 
@@ -512,7 +512,7 @@
 
 <div id="Paris" class="w3-container city w3-animate-opacity" style="display: none;">
   <h2>Paris</h2>
-  <p>Paris is the capital of France.</p> 
+  <p>Paris is the capital of France.</p>
   <p>The Paris area is one of the largest population centers in Europe, with more than 12 million inhabitants.</p>
 </div>
 
@@ -532,7 +532,7 @@
   <a class="w3-button w3-theme-d3 w3-disabled">Button</a>
   <br><br>
   <a class="w3-button w3-circle w3-large w3-black"><i class="fa fa-plus"></i></a>
-  <a class="w3-button w3-circle w3-large w3-theme"><i class="fa fa-plus"></i></a>  
+  <a class="w3-button w3-circle w3-large w3-theme"><i class="fa fa-plus"></i></a>
   <a class="w3-button w3-circle w3-large w3-card-4"><i class="fa fa-plus"></i></a>
 </div>
 <br>
@@ -572,7 +572,7 @@
   <h3>Footer</h3>
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
   <div style="position:relative;bottom:55px;" class="w3-tooltip w3-right">
-    <span class="w3-text w3-theme w3-padding">Go To Top</span>&nbsp;   
+    <span class="w3-text w3-theme w3-padding">Go To Top</span>&nbsp;
     <a class="w3-text-white" href="https://www.w3schools.com/w3css/tryw3css_templates_teal.htm#myHeader"><span class="w3-xlarge">
     <i class="fa fa-chevron-circle-up"></i></span></a>
   </div>
@@ -617,7 +617,7 @@ function myAccFunc(id) {
   var x = document.getElementById(id);
   if (x.className.indexOf("w3-show") == -1) {
     x.className += " w3-show";
-  } else { 
+  } else {
     x.className = x.className.replace(" w3-show", "");
   }
 }
@@ -632,27 +632,27 @@ function plusDivs(n) {
 
 function showDivs(n) {
   var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}    
+  if (n > x.length) {slideIndex = 1}
   if (n < 1) {slideIndex = x.length} ;
   for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
+    x[i].style.display = "none";
   }
-  x[slideIndex-1].style.display = "block";  
+  x[slideIndex-1].style.display = "block";
 }
 
 showDivs(1);
 
 // Progress Bars
 function move() {
-  var elem = document.getElementById("myBar");   
+  var elem = document.getElementById("myBar");
   var width = 1;
   var id = setInterval(frame, 10);
   function frame() {
     if (width == 100) {
       clearInterval(id);
     } else {
-      width++; 
-      elem.style.width = width + '%'; 
+      width++;
+      elem.style.width = width + '%';
       elem.innerHTML = width * 1  + '%';
     }
   }

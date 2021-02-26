@@ -1,6 +1,7 @@
 ---
 layout: template
 title: Gem's other website!
+permalink: nightbot.html
 ---
 
 <!-- Header -->
@@ -48,7 +49,7 @@ title: Gem's other website!
         <li>
           <span class="expand-detailbox">+</span>
           <span>
-            <a href="{{ pg.url }}{{ pg.ext }}" target="_blank"><b>{{ pg.slug }}{{ pg.ext }}</b></a><i data-target-url="{{site.url}}{{ pg.url }}" class="copybtn fa fa-clipboard"></i>: <span class="command-description">{{ pg.description | markdownify }}</span>
+            <a href="{{ pg.url | relative_url }}{{ pg.ext }}" target="_blank"><b>{{ pg.slug }}{{ pg.ext }}</b></a><i data-target-url="{{site.url}}{{ pg.url }}" class="copybtn fa fa-clipboard"></i>: <span class="command-description">{{ pg.description | markdownify }}</span>
           </span>
           <div class="command-detailbox">
             {% assign formatted_vars = "" | split: "" %}
