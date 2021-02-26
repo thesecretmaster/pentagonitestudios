@@ -14,7 +14,9 @@ jobs:
         with:
           ruby-version: 2.7.0
           bundler-cache: true
-      - name: Build jekyll
+      - name: Install dependency
+        run: apt-get install jq
+      - name: Build + Deploy Jekyll
         shell: bash
         run: |
           mkdir $GITHUB_WORKSPACE/../jekyll_build
@@ -23,7 +25,8 @@ jobs:
           git switch -c $remote_branch
           touch .nojekyll
           cd $GITHUB_WORKSPACE
-          bundle exec jekyll build -s $GITHUB_WORKSPACE -d $GITHUB_WORKSPACE/../jekyll_build
+          curl -H "Accept: application/vnd.github.v3+json" https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@api.github.com/repos/$GITHUB_REPOSITORY/pages | jq .source.path
+          bundle exec jekyll build -b $(curl -H "Accept: application/vnd.github.v3+json" https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@api.github.com/repos/$GITHUB_REPOSITORY/pages | jq -r .source.path) -s $GITHUB_WORKSPACE -d $GITHUB_WORKSPACE/../jekyll_build
           cd $GITHUB_WORKSPACE/../jekyll_build
           git config user.name "$GITHUB_ACTOR" && \
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com" && \
