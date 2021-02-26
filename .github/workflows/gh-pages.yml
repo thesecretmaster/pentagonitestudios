@@ -32,6 +32,3 @@ jobs:
           REMOTE_REPO: https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git
           remote_branch: tsm-jekyll-upgrade-out
           COMMIT_OPTIONS: --allow-empty
-      - uses: helaili/jekyll-action@2.0.5
-        env:
-          JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
