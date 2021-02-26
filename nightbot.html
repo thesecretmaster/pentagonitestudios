@@ -48,9 +48,8 @@ title: Gem's other website!
         <li>
           <span class="expand-detailbox">+</span>
           <span>
-            {% capture file_url %}{% link {{ pg.path }} %}{{ pg.ext }}{% endcapture %}
-            <a href="{{ file_url }}" target="_blank"><b>{{ pg.slug }}{{ pg.ext }}</b></a>
-            <i title="{{ file_url | prepend: site.url }}" data-target-url="{{ file_url | prepend: site.url }}" class="copybtn fa fa-clipboard"></i>:
+            <a href="{% link {{ pg.path }} %}{{ pg.ext }}" target="_blank"><b>{{ pg.slug }}{{ pg.ext }}</b></a>
+            <i title="{{ file_url | prepend: site.url }}" data-target-url="{{ site.url }}{% link {{ pg.path }} %}.min{{ pg.ext }}" class="copybtn fa fa-clipboard"></i>:
             <span class="command-description">{{ pg.description | markdownify }}</span>
           </span>
           <div class="command-detailbox">

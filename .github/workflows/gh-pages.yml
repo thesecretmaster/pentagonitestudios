@@ -16,8 +16,10 @@ jobs:
         with:
           ruby-version: 2.7.0
           bundler-cache: true
-      - name: Install dependency
-        run: sudo apt-get install jq
+      - name: Install dependencies
+        run: |
+          sudo apt-get install jq
+          sudo npm install terser -g
       - name: Set up build directory
         shell: bash
         run: |
@@ -33,9 +35,21 @@ jobs:
           echo "Base URL: $BASE_URL"
           curl -H "Accept: application/vnd.github.v3+json" https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@api.github.com/repos/$GITHUB_REPOSITORY/pages
           bundle exec jekyll build -b $BASE_URL -s $GITHUB_WORKSPACE -d $GITHUB_WORKSPACE/../jekyll_build
+      - name: Create legacy JSON files
+        working-directory: ../jekyll_build
+        shell: bash
+        run: for f in nb/{eyes,fish_0,fish_1,fish_off,gaboemote,gaussian,gordonramsay,LMS,test,typo_0}; do cp $f.js $f.json; done
+      - name: Minify JS Step 1
+        working-directory: ../jekyll_build
+        shell: bash
+        run: for f in nb/*.js; do terser $f -o $f.min; done
+      - name: Minify JS Step 2
+        working-directory: ../jekyll_build
+        shell: bash
+        run: for i in nb/*.js.min; do mv "$i" "${i/%.js.min/.min.js}"; done
       - name: Jekyll deploy
+        working-directory: ../jekyll_build
         run: |
-          cd ../jekyll_build
           touch .nojekyll
           git config user.name "$GITHUB_ACTOR" && \
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com" && \
