@@ -23,7 +23,7 @@ jobs:
           cd $GITHUB_WORKSPACE/../jekyll_build
           git clone https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git .
           git switch -c $remote_branch
-          git pull
+          git pull -u origin/$remote_branch $remote_branch
           touch .nojekyll
           cd $GITHUB_WORKSPACE
           curl -H "Accept: application/vnd.github.v3+json" https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@api.github.com/repos/$GITHUB_REPOSITORY/pages | jq .source.path
