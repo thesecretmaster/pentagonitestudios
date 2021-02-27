@@ -19,7 +19,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get install jq
-          sudo npm install terser -g
+          npm install
       - name: Set up build directory
         shell: bash
         run: |
@@ -39,14 +39,10 @@ jobs:
         working-directory: ../jekyll_build
         shell: bash
         run: for f in nb/{eyes,fish_0,fish_1,fish_off,gaboemote,gaussian,gordonramsay,LMS,test,typo_0}; do cp $f.js $f.json; done
-      - name: Minify JS Step 1
-        working-directory: ../jekyll_build
-        shell: bash
-        run: for f in nb/*.js; do terser $f -o $f.min; done
-      - name: Minify JS Step 2
-        working-directory: ../jekyll_build
-        shell: bash
-        run: for i in nb/*.js.min; do mv "$i" "${i/%.js.min/.min.js}"; done
+      - name: Minify JS
+        run: npm run minify
+        env:
+          MIN_JS_DIR: ../jekyll_build/nb/
       - name: Jekyll deploy
         working-directory: ../jekyll_build
         run: |
