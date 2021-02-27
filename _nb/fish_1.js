@@ -11,7 +11,7 @@ tag: specific commands
 order: 1
 ---
 
-// Tell ESLint that there will be a global `user` variable
+/* Tell ESLint that there will be a global `user` variable */
 /* global user */
 
 let gaus = -5;

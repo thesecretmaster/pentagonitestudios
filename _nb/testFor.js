@@ -9,7 +9,7 @@ tag: functions
 order: 2
 ---
 
-// Tell ESLint that there will be a global mutable `testFor` variable and a global `text` variable
+/* Tell ESLint that there will be a global mutable `testFor` variable and a global `text` variable */
 /* global testFor:true, text */
 
 let trg = false;

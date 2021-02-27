@@ -9,7 +9,7 @@ tag: specific commands
 order: 0
 ---
 
-// Tell ESLint that there will be a global `user` variable
+/* Tell ESLint that there will be a global `user` variable */
 /* global user */
 
 let fsh = 5 + Math.random() * 95;

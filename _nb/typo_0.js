@@ -7,7 +7,7 @@ tag: functions
 order: 1
 ---
 
-// Tell ESLint that there will be a global mutable `text` variable
+/* Tell ESLint that there will be a global mutable `text` variable */
 /* global text:true */
 
 const words = text.split(' ');
@@ -28,4 +28,4 @@ for (let i = 0; i < words.length; i++) {
   words[i] = ltrs.join('');
 }
 text = words.join(' ');
-text; // eslint-disable-line no-unused-expressions
+text; /* eslint-disable-line no-unused-expressions */
