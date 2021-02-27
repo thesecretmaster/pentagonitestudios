@@ -26,7 +26,8 @@ const messages=[
 "is attempting to help out with endangered cacti breeding 🌵",
 "probably needs more sleep smolNap",
 "can help out with making nightbot commands! lycelYay",
-"knows how to bake and decorate cakes! abbybaNom"
+"knows how to bake and decorate cakes! abbybaNom",
+"occasionally does photography! 📸" 
 ];
 
 const promo=[
@@ -35,12 +36,19 @@ const promo=[
 "twitch!...eventually https://www.twitch.tv/gemhunter178"
 ];
 
-var prmNum=0;
-if(Math.random()>0.7){
-	prmNum=1+Math.floor(Math.random()*(promo.length-1));
-}
+var showPromo=true;
+if(/nopromo/i.test(text)){
+	showPromo=false;
+}	
 
-var msg="one of our mods - Gem (she/them) - "+messages[Math.floor(Math.random()*messages.length)]+" Follow her "+promo[prmNum];
+var msg=desc+" - Gem (she/them) - "+messages[Math.floor(Math.random()*messages.length)];
+if(showPromo){
+	let prmNum=0;
+	if(Math.random()>0.7){
+		prmNum=1+Math.floor(Math.random()*(promo.length-1));
+	}
+	msg+=" Follow her "+promo[prmNum];
+}
 
 if(user=="Gemhunter178"){
 	let opt=text.split(' ');
@@ -75,10 +83,6 @@ if(user=="Gemhunter178"){
 		
 		case "override":
 		msg;
-		break;
-		
-		case "spicy":
-		"abbybaSpicy lycelChaos abbybaSpicy_HF";
 		break;
 		
 		default:
