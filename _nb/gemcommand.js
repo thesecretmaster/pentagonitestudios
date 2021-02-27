@@ -25,7 +25,8 @@ const messages=[
 "has all 7 continents representing in her rock collection! smolWow",
 "is attempting to help out with endangered cacti breeding 🌵",
 "probably needs more sleep smolNap",
-"can help out with making nightbot commands! lycelYay"
+"can help out with making nightbot commands! lycelYay",
+"knows how to bake and decorate cakes! abbybaNom"
 ];
 
 const promo=[
