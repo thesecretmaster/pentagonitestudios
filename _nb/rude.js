@@ -5,6 +5,7 @@ variables:
 tag: large arrays
 order: 4
 ---
+
 const testFor = [
   'ugly',
   'fat',
@@ -20,4 +21,6 @@ const testFor = [
   'mean',
   'nasty',
   'jealous',
-  'rude']
+  'rude',
+  'cringe',
+  'tired']
