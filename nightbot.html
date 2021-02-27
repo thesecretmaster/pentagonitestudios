@@ -57,7 +57,7 @@ title: Gem's other website!
               {% assign formatted_vars = formatted_vars | push: formatted_var %}
             {% endfor %}
             <p>variables: {{ formatted_vars | join: ", "}}</p>
-            {% highlight js %}{{ pg | xml_escape }}{% endhighlight %}
+            {% highlight js %}{{ pg }}{% endhighlight %}
           </div>
         </li>
       {% endfor %}
