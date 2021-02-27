@@ -4,7 +4,9 @@
   "description": "This is a page that was oriiginally created for getting past the nightbot character limit. I suppose I can host some other small files here too?",
   "main": "nav_helpers.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint",
+    "minify": "bash -O extglob -c -- 'for f in ${MIN_JS_DIR:-_site/nb/}+([^.]).js; do basename=\"${f%.*}\"; terser -o \"$basename.min.js\" -- \"$basename.js\"; done'"
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,7 @@
     "eslint-plugin-frontmatter": "git+https://github.com/thesecretmaster/eslint-plugin-frontmatter.git",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.3.1"
+    "eslint-plugin-promise": "^4.3.1",
+    "terser": "^5.6.0"
   }
 }
