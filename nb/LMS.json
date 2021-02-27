@@ -38,4 +38,4 @@ const LMS = ['This is a nice stick',
   'stick',
   'Need stick got stick',
   'Becky I got stick!',
-  'Lemme Smash!']
+  'Lemme Smash!'];

@@ -11,4 +11,4 @@ const eyes = ['pcrowEyes',
   'pcrowO',
   'maizFlushed',
   'pcrowW',
-  'kaestr1Eyes']
+  'kaestr1Eyes'];

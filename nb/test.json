@@ -1,1 +1,1 @@
-const testtext = ['test', 'testing']
+const testtext = ['test', 'testing'];
