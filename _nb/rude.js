@@ -20,4 +20,5 @@ const testFor=[
 "mean",
 "nasty",
 "jealous",
-"rude"]
+"rude",
+"cringe"]
