@@ -1,9 +1,9 @@
 /* This code is intentionally left off the nightbot.html list */
 
-// Tell ESLint that there will be the following gloabl variables
+/* Tell ESLint that there will be the following global variables */
 /* global user, text */
 
-// These ESLint errors should be handled, but for now I just want to get it to pass
+/* These ESLint errors should be handled, but for now I just want to get it to pass */
 /* eslint-disable no-unused-expressions, no-case-declarations, no-unused-expressions */
 
 const messages = [

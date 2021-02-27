@@ -1544,7 +1544,7 @@ const gr3 = [</span><span class="dl">'</span><span class="nx">absolute</span> <s
             
             
             <p>variables: <code>words</code>, <code>text</code></p>
-            <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Tell ESLint that there will be a global mutable `text` variable</span>
+            <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="cm">/* Tell ESLint that there will be a global mutable `text` variable */</span>
 <span class="cm">/* global text:true */</span>
 
 <span class="kd">const</span> <span class="nx">words</span> <span class="o">=</span> <span class="nx">text</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="p">);</span>
@@ -1565,7 +1565,7 @@ const gr3 = [</span><span class="dl">'</span><span class="nx">absolute</span> <s
   <span class="nx">words</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">ltrs</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="nx">text</span> <span class="o">=</span> <span class="nx">words</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="p">);</span>
-<span class="nx">text</span><span class="p">;</span> <span class="c1">// eslint-disable-line no-unused-expressions</span></code></pre></figure>
+<span class="nx">text</span><span class="p">;</span> <span class="cm">/* eslint-disable-line no-unused-expressions */</span></code></pre></figure>
           </div>
         </li>
       
@@ -1581,7 +1581,7 @@ const gr3 = [</span><span class="dl">'</span><span class="nx">absolute</span> <s
             
             
             <p>variables: <code>trg</code>, <code>text</code>, <code>testFor</code>, <code>regTest</code></p>
-            <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Tell ESLint that there will be a global mutable `testFor` variable and a global `text` variable</span>
+            <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="cm">/* Tell ESLint that there will be a global mutable `testFor` variable and a global `text` variable */</span>
 <span class="cm">/* global testFor:true, text */</span>
 
 <span class="kd">let</span> <span class="nx">trg</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
@@ -1610,7 +1610,7 @@ const gr3 = [</span><span class="dl">'</span><span class="nx">absolute</span> <s
             
             
             <p>variables: <code>fsh</code>, <code>msg</code>, <code>sz</code>, <code>fishoutput</code></p>
-            <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Tell ESLint that there will be a global `user` variable</span>
+            <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="cm">/* Tell ESLint that there will be a global `user` variable */</span>
 <span class="cm">/* global user */</span>
 
 <span class="kd">let</span> <span class="nx">fsh</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">+</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">95</span><span class="p">;</span>
@@ -1649,7 +1649,7 @@ const gr3 = [</span><span class="dl">'</span><span class="nx">absolute</span> <s
             
             
             <p>variables: <code>gaus</code>, <code>fsh</code>, <code>msg</code>, <code>sz</code>, <code>fishoutput</code></p>
-            <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Tell ESLint that there will be a global `user` variable</span>
+            <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="cm">/* Tell ESLint that there will be a global `user` variable */</span>
 <span class="cm">/* global user */</span>
 
 <span class="kd">let</span> <span class="nx">gaus</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span><span class="p">;</span>
