@@ -17,7 +17,7 @@ const messages=[
 "literally has a few hundred, maybe thousand cacti and succulents 🌵",
 "plays piano and flute but also knows some guitar, ukulele, and general percussion smolJam",
 "wants to remind chat that they are all cuties! elizab34Uwu",
-"say Trans Rights! smolPride kaestr1Pride lycelPride abbybaPride maizPride",
+"says Trans Rights! smolPride kaestr1Pride lycelPride abbybaPride maizPride",
 "is hoping this array is long enough to provide a good variation of messages lycelW",
 "also takes care of a good number of airplants 🍃",
 "can do imtermediate origami 🏵️",
@@ -27,7 +27,8 @@ const messages=[
 "probably needs more sleep smolNap",
 "can help out with making nightbot commands! lycelYay",
 "knows how to bake and decorate cakes! abbybaNom",
-"occasionally does photography! 📸" 
+"occasionally does photography! 📸",
+"is hoping that all of these text options don't have a typo... smolS"
 ];
 
 const promo=[
