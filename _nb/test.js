@@ -6,4 +6,4 @@ tag: for testing only
 order: 1
 ---
 
-const testtext=["test","testing"]
+const testtext = ['test', 'testing']

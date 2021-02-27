@@ -6,4 +6,5 @@ variables:
 tag: specific commands
 order: 2
 ---
-fishoutput="!fish is closed. Thanks for fishing with us!! kaestr1Hug"
+
+const fishoutput = '!fish is closed. Thanks for fishing with us!! kaestr1Hug'
