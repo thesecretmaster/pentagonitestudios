@@ -80,4 +80,4 @@ const emotes = ['kaestr1Cool',
   'maizFlushed',
   'pcrowW',
   'lycelGaze',
-  'abibeaLurk']
+  'abibeaLurk'];
