@@ -29,7 +29,8 @@ jobs:
         shell: bash
         working-directory: ${{ env.output_dir }}
         run: |
-          mkdir $GITHUB_WORKSPACE/${{ env.output_dir }}
+          pwd
+          ls
           git clone https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git .
           git switch -c $remote_branch
           git branch --set-upstream-to=origin/$remote_branch $remote_branch
