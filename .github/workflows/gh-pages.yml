@@ -18,7 +18,7 @@ jobs:
           path: ${{ env.build_dir }}
       - uses: ruby/setup-ruby@v1
         env:
-          BUNDLE_GEMFILE: ${{ env.buld_dir }}/Gemfile
+          BUNDLE_GEMFILE: ${{ env.build_dir }}/Gemfile
         with:
           ruby-version: 2.7.0
           bundler-cache: true
