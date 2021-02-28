@@ -29,6 +29,7 @@ jobs:
         shell: bash
         working-directory: ${{ env.output_dir }}
         run: |
+          mkdir $GITHUB_WORKSPACE/${{ env.output_dir }}
           git clone https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git .
           git switch -c $remote_branch
           git branch --set-upstream-to=origin/$remote_branch $remote_branch
@@ -44,12 +45,12 @@ jobs:
         shell: bash
         run: for f in nb/{eyes,fish_0,fish_1,fish_off,gaboemote,gaussian,gordonramsay,LMS,test,typo_0}; do cp $f.js $f.json; done
       - name: Minify JS
-        working-directory: ${{ env.out_dir }}
+        working-directory: ${{ env.output_dir }}
         run: npm run minify
         env:
           MIN_JS_DIR: ${{ env.out_dir }}/nb/
       - name: Jekyll deploy
-        working-directory: ${{ env.out_dir }}
+        working-directory: ${{ env.output_dir }}
         run: |
           touch .nojekyll
           git config user.name "$GITHUB_ACTOR" && \
