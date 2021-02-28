@@ -59,7 +59,13 @@ if(user=="Gemhunter178"){
 		break;
 		
 		case "typo":
-		msg="Gem would like to apologize for her typos";
+		let wrd1="Gem";
+		let wrd2="her";
+		if(opt.length>1){
+			wrd1=opt[1];
+			wrd2="their";
+		}
+		msg=wrd1+" would like to apologize for "+wrd2+" typos";
 		/*just the function from typo_0.json*/
 		words = msg.split(' ');
 		for(i=0;i<words.length;i++){

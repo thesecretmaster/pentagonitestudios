@@ -7,6 +7,9 @@ tag: functions
 order: 1
 ---
 
+if(text.length==0){
+	text="You gotta enter a sentence to typo, silly!";
+}
 words = text.split(' ');
 for(i=0;i<words.length;i++){
 	ltrs = words[i].split('');
