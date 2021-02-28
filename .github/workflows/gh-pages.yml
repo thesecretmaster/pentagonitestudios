@@ -31,12 +31,17 @@ jobs:
       - name: Install javascript dependencies
         working-directory: ${{ env.build_dir }}
         run: npm install
+      - name: Get baseurl from GitHub API
+        uses: octokit/request-action@v2.x
+        id: get_baseurl
+        with:
+          route: GET /repos/${{ github.repository }}/pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Build Jekyll
+        shell: bash
         working-directory: ${{ env.build_dir }}
-        run: |
-          BASE_URL=$(curl -H "Accept: application/vnd.github.v3+json" https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@api.github.com/repos/$GITHUB_REPOSITORY/pages | jq -r .html_url | sed 's|https\?\:\/\/[^\/]*\(\.*\)|\1|')
-          echo "Base URL: $BASE_URL"
-          bundle exec jekyll build -b $BASE_URL -d ${{ env.output_dir }}
+        run: bundle exec jekyll build -b $(echo "${{ fromJson(steps.get_baseurl.outputs.data).html_url }}" | sed 's|https\?\:\/\/[^\/]*\(\.*\)|\1|') -d ${{ env.output_dir }}
       - name: Create legacy JSON files
         working-directory: ${{ env.output_dir }}
         shell: bash
