@@ -41,10 +41,9 @@ jobs:
       - name: Minify JS
         working-directory: ${{ env.build_dir }}
         run: |
-          echo ${{ env.GITHUB_WORKSPACE }}
           npm run minify
         env:
-          MIN_JS_DIR: ${{ env.GITHUB_WORKSPACE }}/${{ env.output_dir }}/nb/
+          MIN_JS_DIR: ${{ github.workspace }}/${{ env.output_dir }}/nb/
       - name: Jekyll deploy
         working-directory: ${{ env.output_dir }}
         run: |
