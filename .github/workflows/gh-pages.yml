@@ -29,7 +29,7 @@ jobs:
           path: ${{ env.output_dir }}
           ref: ${{ env.remote_branch }}
       - name: Jekyll build
-        working-dir: ${{ env.build_dir }}
+        working-directory: ${{ env.build_dir }}
         run: |
           export BASE_URL=$(curl -H "Accept: application/vnd.github.v3+json" https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@api.github.com/repos/$GITHUB_REPOSITORY/pages | jq -r .html_url | sed 's|https\?\:\/\/[^\/]*\(\.*\)|\1|')
           echo "Base URL: $BASE_URL"
