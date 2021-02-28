@@ -47,8 +47,8 @@ jobs:
         working-directory: ${{ env.output_dir }}
         run: |
           touch .nojekyll
-          git config user.name "$GITHUB_ACTOR" && \
-          git config user.email "$GITHUB_ACTOR@users.noreply.github.com" && \
-          git add . && \
-          git commit --allow-empty -m "jekyll build from Action $GITHUB_SHA" && \
-          git push https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git $remote_branch:$remote_branch
+          git config user.name "$GITHUB_ACTOR"
+          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          git add .
+          git commit --allow-empty -m "Jekyll build from Action $GITHUB_SHA"
+          git push
