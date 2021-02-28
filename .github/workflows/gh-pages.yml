@@ -24,12 +24,10 @@ jobs:
           bundler-cache: true
       - name: Install dependencies
         working-directory: ${{ env.build_dir }}
-        run: |
-          sudo apt-get install jq
-          npm install
+        run: npm install
       - name: Set up build directory
         shell: bash
-        working-directory: ${{ env.build_dir }}
+        working-directory: ${{ env.output_dir }}
         run: |
           git clone https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git .
           git switch -c $remote_branch
