@@ -65,7 +65,7 @@ if(user=="Gemhunter178"){
 			wrd1=opt[1];
 			wrd2="their";
 		}
-		msg=wrd1+" would like to apologize for "+wrd2+" typos";
+		msg="On behalf of "wrd1+", we would like to apologize for "+wrd2+" typos";
 		/*just the function from typo_0.json*/
 		words = msg.split(' ');
 		for(i=0;i<words.length;i++){
