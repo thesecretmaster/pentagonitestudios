@@ -25,16 +25,18 @@ jobs:
       - name: Install dependencies
         working-directory: ${{ env.build_dir }}
         run: npm install
-      - name: Set up build directory
-        shell: bash
-        working-directory: ${{ env.output_dir }}
-        run: |
-          pwd
-          ls
-          git clone https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git .
-          git switch -c $remote_branch
-          git branch --set-upstream-to=origin/$remote_branch $remote_branch
-          git pull
+      - uses: actions/checkout@v2
+        with:
+          path: ${{ env.output_dir }}
+          ref: ${{ env.remote_branch }}
+      # - name: Set up build directory
+      #   shell: bash
+      #   run: |
+      #     mkdir $GITHUB_WORKSPACE/${{ env.output_dir }} && cd ${{ env.output_dir }}
+      #     git clone https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git .
+      #     git switch -c $remote_branch
+      #     git branch --set-upstream-to=origin/$remote_branch $remote_branch
+      #     git pull
       - name: Jekyll build
         working-directory: ${{ env.build_dir }}
         run: |
