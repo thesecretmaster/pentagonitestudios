@@ -9,22 +9,25 @@ jobs:
   github-pages:
     runs-on: ubuntu-latest
     env:
-      remote_branch: tsm-jekyll-upgrade2-out
+      remote_branch: tsm-jekyll-upgrade-out
       output_dir: ${{ github.workspace }}/out
       build_dir: ${{ github.workspace }}/src
     steps:
-      - uses: actions/checkout@v2
+      - name: Setup build directory
+        uses: actions/checkout@v2
         with:
           path: ${{ env.build_dir }}
-      - uses: ruby/setup-ruby@v1
+      - name: Setup output directory
+        uses: actions/checkout@v2
+        with:
+          path: ${{ env.output_dir }}
+          ref: ${{ env.remote_branch }}
+      - name: Install ruby + ruby dependencies
+        uses: ruby/setup-ruby@v1
         with:
           working-directory: ${{ env.build_dir }}
           ruby-version: 2.7.0
           bundler-cache: true
-      - name: Install node.js + npm
-        uses: actions/setup-node@v2
-        with:
-          node-version: '15'
       - name: Install javascript dependencies
         working-directory: ${{ env.build_dir }}
         run: npm install
@@ -43,17 +46,17 @@ jobs:
         working-directory: ${{ env.output_dir }}
         shell: bash
         run: for f in nb/{eyes,fish_0,fish_1,fish_off,gaboemote,gaussian,gordonramsay,LMS,test,typo_0}; do cp $f.js $f.json; done
-      - name: Minify JS
+      - name: Minify javascript
         working-directory: ${{ env.build_dir }}
         run: npm run minify
         env:
           MIN_JS_DIR: ${{ env.output_dir }}/nb/
-      - name: Jekyll deploy
+      - name: Deploy Jekyll
         working-directory: ${{ env.output_dir }}
         run: |
           touch .nojekyll
-          git config user.name "$GITHUB_ACTOR" && \
-          git config user.email "$GITHUB_ACTOR@users.noreply.github.com" && \
-          git add . && \
-          git commit --allow-empty -m "jekyll build from Action $GITHUB_SHA" && \
-          git push https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git $remote_branch:$remote_branch
+          git config user.name "$GITHUB_ACTOR"
+          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          git add .
+          git commit --allow-empty -m "Jekyll build from Action $GITHUB_SHA"
+          git push
