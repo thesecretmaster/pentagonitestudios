@@ -9,7 +9,7 @@ const messages=[
 	"is hoping everyone is having a good day lycelComfy",
 	"has attempted flameworking glass before, semi-successfully lycelIdk",
 	"has a rather extensive rock and mineral collection abbybaCool",
-	"thinks Shirley Temples (drink) are amazing! (she does not kow enough about the person) 🍷",
+	"thinks Shirley Temples (drink) are amazing! (she does not know enough about the person) 🍷",
 	"exists in EST/EDT 🕛",
 	"can do traditional and digital art, both in 2D and 3D abbybaPaint",
 	"probably plays too much ACNH #notsponsored",
