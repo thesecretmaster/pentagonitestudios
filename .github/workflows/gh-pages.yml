@@ -29,11 +29,12 @@ jobs:
           path: ${{ env.output_dir }}
           ref: ${{ env.remote_branch }}
       - name: Jekyll build
+        working-dir: ${{ env.build_dir }}
         run: |
           export BASE_URL=$(curl -H "Accept: application/vnd.github.v3+json" https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@api.github.com/repos/$GITHUB_REPOSITORY/pages | jq -r .html_url | sed 's|https\?\:\/\/[^\/]*\(\.*\)|\1|')
           echo "Base URL: $BASE_URL"
           ls
-          bundle exec jekyll build -b $BASE_URL -s ${{ env.build_dir }} -d ${{ env.output_dir }}
+          bundle exec jekyll build -b $BASE_URL -d $GITHUB_WORKSPACE/${{ env.output_dir }}
       - name: Create legacy JSON files
         working-directory: ${{ env.output_dir }}
         shell: bash
