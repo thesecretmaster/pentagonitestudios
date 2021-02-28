@@ -22,3 +22,9 @@ collections:
   nb:
     output: true
     permalink: /:collection/:path
+
+exclude:
+  - package*.json
+  - .github
+  - .eslintrc.js
+  - Gemfile*
