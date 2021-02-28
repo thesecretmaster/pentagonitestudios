@@ -28,3 +28,4 @@ exclude:
   - .github
   - .eslintrc.js
   - Gemfile*
+  - .gitignore
