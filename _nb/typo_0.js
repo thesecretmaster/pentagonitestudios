@@ -7,9 +7,12 @@ tag: functions
 order: 1
 ---
 
-/* Tell ESLint that there will be a global mutable `text` variable */
+/* Tell ESLint that there will be the following global variables */
 /* global text:true */
 
+if (text.length === 0) {
+  text = 'You gotta enter a sentence to typo, silly!';
+}
 const words = text.split(' ');
 for (let i = 0; i < words.length; i++) {
   const ltrs = words[i].split('');
