@@ -3,48 +3,54 @@ name: Build and deploy Jekyll site to GitHub Pages
 on:
   push:
     branches:
-      - tsm-jekyll-upgrade
+      - tsm-jekyll-upgrade2
 
 jobs:
   github-pages:
     runs-on: ubuntu-latest
     env:
-      remote_branch: tsm-jekyll-upgrade-out
+      remote_branch: tsm-jekyll-update-out2
+      output_dir: out
+      build_dir: src
     steps:
       - uses: actions/checkout@v2
+        with:
+          path: ${{ env.build_dir }}
       - uses: ruby/setup-ruby@v1
+        working-directory: ${{ env.build_dir }}
         with:
           ruby-version: 2.7.0
           bundler-cache: true
       - name: Install dependencies
+        working-directory: ${{ env.build_dir }}
         run: |
           sudo apt-get install jq
           npm install
       - name: Set up build directory
         shell: bash
+        working-directory: ${{ env.build_dir }}
         run: |
-          mkdir ../jekyll_build
-          cd ../jekyll_build
           git clone https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git .
           git switch -c $remote_branch
           git branch --set-upstream-to=origin/$remote_branch $remote_branch
           git pull
       - name: Jekyll build
+        working-directory: ${{ env.build_dir }}
         run: |
           export BASE_URL=$(curl -H "Accept: application/vnd.github.v3+json" https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@api.github.com/repos/$GITHUB_REPOSITORY/pages | jq -r .html_url | sed 's|https\?\:\/\/[^\/]*\(\.*\)|\1|')
           echo "Base URL: $BASE_URL"
-          curl -H "Accept: application/vnd.github.v3+json" https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@api.github.com/repos/$GITHUB_REPOSITORY/pages
-          bundle exec jekyll build -b $BASE_URL -s $GITHUB_WORKSPACE -d $GITHUB_WORKSPACE/../jekyll_build
+          bundle exec jekyll build -b $BASE_URL -s $GITHUB_WORKSPACE -d $GITHUB_WORKSPACE/${{ env.out_dir }}
       - name: Create legacy JSON files
-        working-directory: ../jekyll_build
+        working-directory: ${{ env.out_dir }}
         shell: bash
         run: for f in nb/{eyes,fish_0,fish_1,fish_off,gaboemote,gaussian,gordonramsay,LMS,test,typo_0}; do cp $f.js $f.json; done
       - name: Minify JS
+        working-directory: ${{ env.out_dir }}
         run: npm run minify
         env:
-          MIN_JS_DIR: ../jekyll_build/nb/
+          MIN_JS_DIR: ${{ env.out_dir }}/nb/
       - name: Jekyll deploy
-        working-directory: ../jekyll_build
+        working-directory: ${{ env.out_dir }}
         run: |
           touch .nojekyll
           git config user.name "$GITHUB_ACTOR" && \
