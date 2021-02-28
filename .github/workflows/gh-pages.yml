@@ -30,20 +30,19 @@ jobs:
           path: ${{ env.output_dir }}
           ref: ${{ env.remote_branch }}
       - name: Jekyll build
-        working-directory: ${{ env.build_dir }}
         run: |
           export BASE_URL=$(curl -H "Accept: application/vnd.github.v3+json" https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@api.github.com/repos/$GITHUB_REPOSITORY/pages | jq -r .html_url | sed 's|https\?\:\/\/[^\/]*\(\.*\)|\1|')
           echo "Base URL: $BASE_URL"
-          bundle exec jekyll build -b $BASE_URL -s $GITHUB_WORKSPACE -d $GITHUB_WORKSPACE/${{ env.out_dir }}
+          bundle exec jekyll build -b $BASE_URL -s ${{ env.build_dir }} -d ${{ env.output_dir }}
       - name: Create legacy JSON files
         working-directory: ${{ env.out_dir }}
         shell: bash
         run: for f in nb/{eyes,fish_0,fish_1,fish_off,gaboemote,gaussian,gordonramsay,LMS,test,typo_0}; do cp $f.js $f.json; done
       - name: Minify JS
-        working-directory: ${{ env.output_dir }}
+        working-directory: ${{ env.build_dir }}
         run: npm run minify
         env:
-          MIN_JS_DIR: ${{ env.out_dir }}/nb/
+          MIN_JS_DIR: ${{ env.output_dir }}/nb/
       - name: Jekyll deploy
         working-directory: ${{ env.output_dir }}
         run: |
