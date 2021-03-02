@@ -6,7 +6,7 @@ variables:
   - testFor
   - regTest
 tag: functions
-order: 2
+order: 3
 ---
 var trg = false;
 /*original regex solution from jfriend00 on stackoverflow */
