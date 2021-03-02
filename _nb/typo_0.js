@@ -1,5 +1,5 @@
 ---
-description: requires an input string "_text_" that will then be output with a random number of typos. Original iteration that swaps and duplicates some letters
+description: requires an input string "_text_" that will then be output with a random number of typos. Original iteration that swaps and duplicates some letters. No longer auto-sends message (returns "_text_" with typos)
 variables:
   - words
   - text
@@ -31,4 +31,3 @@ for (let i = 0; i < words.length; i++) {
   words[i] = ltrs.join('');
 }
 text = words.join(' ');
-text; /* eslint-disable-line no-unused-expressions */
