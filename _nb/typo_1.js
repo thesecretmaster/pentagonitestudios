@@ -19,7 +19,7 @@ if(firstWord.replace(/[0-9]/g,'')=="run"){
 		} else if(runTimes>9){
 			runTimes=9;
 		}
-		text = text.substr(original.indexOf(" ") + 1);
+		text = text.substr(text.indexOf(" ") + 1);
 	}
 }
 
