@@ -31,13 +31,13 @@ if(text.length==0){
 }
 
 for (i = 1; i <= runTimes; i++){
-	words = text.split(' ');
+	let words = text.split(' ');
 	for(i=0;i<words.length;i++){
-		ltrs = words[i].split('');
+		let ltrs = words[i].split('');
 		for(j=1;j<ltrs.length-1;j++){
 			if(Math.random()<0.15){
 				if(Math.random()<0.7){
-					tmp=ltrs[j];
+					let tmp=ltrs[j];
 					ltrs[j]=ltrs[j+1];
 					ltrs[j+1]=tmp;
 					j++;
