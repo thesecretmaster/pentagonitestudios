@@ -28,7 +28,7 @@ if(text.length==0){
 	iptNum=0;
 }
 
-if(iptNum>6||inputNum<0){
+if(iptNum>6||iptNum<0){
 	iptNum = 6;
 }
 
