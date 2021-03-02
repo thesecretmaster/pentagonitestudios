@@ -3,13 +3,13 @@ name: Build+Deploy to GH Pages
 on:
   push:
     branches:
-      - tsm-jekyll-upgrade
+      - master
 
 jobs:
   github-pages:
     runs-on: ubuntu-latest
     env:
-      remote_branch: tsm-jekyll-upgrade-out
+      remote_branch: active_site
       output_dir: ${{ github.workspace }}/out
       build_dir: ${{ github.workspace }}/src
     steps:
