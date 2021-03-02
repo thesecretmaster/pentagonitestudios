@@ -24,7 +24,7 @@ if(firstWord.replace(/[0-9]/g,'')=="num"){
 if(text.length==0){
 	text="You gotta enter a sentence to typo, silly!";
 } else if(/^help$|^\\?$|^info$/.test(text)){
-	text="Gem's typo v1! allows even more cursed typos if you start with run[num]";
+	text="Gem's typo v1! allows even more cursed typos if you start with num[num]";
 	iptNum=0;
 }
 
