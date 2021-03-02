@@ -1,5 +1,5 @@
 ---
-description: requires an input string "_text_" that will then be output with a random number of typos. Added functionality: if the first word is "run[number]" it will run [number] times* (*up to 9.) Does not auto-output text.
+description: requires an input string "_text_" that will then be output with a random number of typos. Added functionality - if the first word is "run[number]" it will run [number] times* (*up to 9.) Does not auto-output text.
 variables:
   - words
   - text
