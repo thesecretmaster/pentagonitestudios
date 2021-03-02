@@ -26,7 +26,8 @@ if(firstWord.replace(/[0-9]/g,'')=="run"){
 if(text.length==0){
 	text="You gotta enter a sentence to typo, silly!";
 } else if(/^help$|^\\?$|^info$/.test(text)){
-	"Gem's typo algorithm v1! type run# as the first input word to run recursively (up to 9) example: 'run3 [sentence]' *note some commands may not allow this";
+	text="Gem's typo algorithm v1! type run# as the first input word to run recursively (up to 9) example: 'run3 [sentence]' *note some commands may not allow this";
+	runTimes=0;
 }
 
 for (i = 1; i <= runTimes; i++){
