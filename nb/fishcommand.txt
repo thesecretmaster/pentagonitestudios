@@ -1,5 +1,0 @@
-$(eval 
-user="$(user)";
-$(urlfetch json http://pentagonitestudios.com/nb/fish_1.json);
-fishoutput;
-)

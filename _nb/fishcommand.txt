@@ -1,0 +1,5 @@
+$(eval 
+user="$(user)";
+$(urlfetch json https://pentagonitestudios.com/nb/fish_1.json);
+fishoutput;
+)
