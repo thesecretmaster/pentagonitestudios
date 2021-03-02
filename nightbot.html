@@ -1539,7 +1539,7 @@
           <span>
             <a href="/pentagonitestudios/nb/typo_0.js" target="_blank"><b>typo_0.js</b></a>
             <i title="https://pentagonitestudios.com" data-target-url="https://pentagonitestudios.com/pentagonitestudios/nb/typo_0.min.js" class="copybtn fa fa-clipboard"></i>:
-            <span class="command-description"><p>requires an input string “<em>text</em>” that will then be output with a random number of typos. Original iteration that swaps and duplicates some letters</p>
+            <span class="command-description"><p>requires an input string “<em>text</em>” that will then be output with a random number of typos. Original iteration that swaps and duplicates some letters. No longer auto-sends message (returns “<em>text</em>” with typos)</p>
 </span>
           </span>
           <div class="command-detailbox">
@@ -1569,8 +1569,67 @@
   <span class="p">}</span>
   <span class="nx">words</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">ltrs</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
 <span class="p">}</span>
-<span class="nx">text</span> <span class="o">=</span> <span class="nx">words</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="p">);</span>
-<span class="nx">text</span><span class="p">;</span> <span class="cm">/* eslint-disable-line no-unused-expressions */</span></code></pre></figure>
+<span class="nx">text</span> <span class="o">=</span> <span class="nx">words</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="p">);</span></code></pre></figure>
+          </div>
+        </li>
+      
+        <li>
+          <span class="expand-detailbox">+</span>
+          <span>
+            <a href="/pentagonitestudios/nb/typo_1.js" target="_blank"><b>typo_1.js</b></a>
+            <i title="https://pentagonitestudios.com" data-target-url="https://pentagonitestudios.com/pentagonitestudios/nb/typo_1.min.js" class="copybtn fa fa-clipboard"></i>:
+            <span class="command-description"><p>same as the typo algo above but allows some control of level of typos made if the sentence starts with “run[number]”, up to 6.</p>
+</span>
+          </span>
+          <div class="command-detailbox">
+            
+            
+            <p>variables: <code>text</code>, <code>words</code>, <code>iptNum</code>, <code>firstWord</code></p>
+            <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="cm">/* Tell ESLint that there will be the following global variables */</span>
+<span class="cm">/* global text:true */</span>
+
+<span class="kd">let</span> <span class="nx">iptNum</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">firstWord</span> <span class="o">=</span> <span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/ .*/</span><span class="p">,</span> <span class="dl">''</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">firstWord</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">[</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">/g</span><span class="p">,</span> <span class="dl">''</span><span class="p">)</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">num</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">firstWord</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/</span><span class="se">\d</span><span class="sr">+$/</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">iptNum</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">isNaN</span><span class="p">(</span><span class="nx">iptNum</span><span class="p">))</span> <span class="p">{</span>
+      <span class="nx">iptNum</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">text</span> <span class="o">=</span> <span class="nx">text</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="nx">text</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">text</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">text</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">You gotta enter a sentence to typo, silly!</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="sr">/^help$|^</span><span class="se">\\?</span><span class="sr">$|^info$/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">text</span><span class="p">))</span> <span class="p">{</span>
+  <span class="nx">text</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Gem's typo v1! allows even more cursed typos if you start with num[num]</span><span class="dl">"</span><span class="p">;</span>
+  <span class="nx">iptNum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">iptNum</span> <span class="o">&gt;</span> <span class="mi">6</span> <span class="o">||</span> <span class="nx">iptNum</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">iptNum</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">words</span> <span class="o">=</span> <span class="nx">text</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="p">);</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">words</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">ltrs</span> <span class="o">=</span> <span class="nx">words</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">split</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">ltrs</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mf">0.15</span> <span class="o">*</span> <span class="nx">iptNum</span><span class="p">))</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">0.7</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">tmp</span> <span class="o">=</span> <span class="nx">ltrs</span><span class="p">[</span><span class="nx">j</span><span class="p">];</span>
+        <span class="nx">ltrs</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">=</span> <span class="nx">ltrs</span><span class="p">[</span><span class="nx">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
+        <span class="nx">ltrs</span><span class="p">[</span><span class="nx">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">tmp</span><span class="p">;</span>
+        <span class="nx">j</span><span class="o">++</span><span class="p">;</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">ltrs</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">+=</span> <span class="nx">ltrs</span><span class="p">[</span><span class="nx">j</span><span class="p">];</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="nx">words</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">ltrs</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">text</span> <span class="o">=</span> <span class="nx">words</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="p">);</span></code></pre></figure>
           </div>
         </li>
       
@@ -1664,7 +1723,7 @@
   <span class="k">while</span> <span class="p">(</span><span class="nx">u</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="nx">u</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">();</span>
   <span class="k">while</span> <span class="p">(</span><span class="nx">v</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="nx">v</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">();</span>
   <span class="nx">gaus</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">sqrt</span><span class="p">(</span><span class="o">-</span><span class="mf">2.0</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">u</span><span class="p">))</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">cos</span><span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span> <span class="o">*</span> <span class="nx">v</span><span class="p">);</span>
-  <span class="nx">gaus</span> <span class="o">=</span> <span class="nx">gaus</span> <span class="o">*</span> <span class="mf">2.75</span><span class="p">;</span>
+  <span class="nx">gaus</span> <span class="o">=</span> <span class="nx">gaus</span> <span class="o">*</span> <span class="mf">2.5</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="kd">const</span> <span class="nx">fsh</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">+</span> <span class="nx">gaus</span><span class="p">;</span>
 <span class="kd">const</span> <span class="nx">msg</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">Teeny fish! lycelGib </span><span class="dl">'</span><span class="p">,</span>

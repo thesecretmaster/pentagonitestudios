@@ -22,4 +22,3 @@ for (let i = 0; i < words.length; i++) {
   words[i] = ltrs.join('');
 }
 text = words.join(' ');
-text; /* eslint-disable-line no-unused-expressions */
