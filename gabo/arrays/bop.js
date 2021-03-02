@@ -1,1 +1,3 @@
-aa
+const bop=[' cjyaBop ',
+           ' abbybaBop ',
+           ' BOP ']
