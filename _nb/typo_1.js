@@ -1,35 +1,36 @@
 ---
-description: same as the typo algo above but allows some control of level of typos made if the sentence starts with "run[number]", up to 6.
+description: same as the typo algo above but allows some control of level of typos made if the sentence starts with "typo[number]", up to 10.
 variables:
   - text
   - words
   - iptNum
-  - firstWord
+  - repeatNum
 tag: functions
 order: 2
 ---
 var iptNum = 1;
-var firstWord = text.replace(/ .*/,'');
-if(firstWord.replace(/[0-9]/g,'')=="num"){
-	let value = firstWord.match(/\d+$/);
-	if(value){
-		iptNum = parseInt(value);
-		if(isNaN(iptNum)){
-			iptNum=1;
-		}
-		text = text.substr(text.indexOf(" ") + 1);
-	}
-}
-
 if(text.length==0){
 	text="You gotta enter a sentence to typo, silly!";
 } else if(/^help$|^\\?$|^info$/.test(text)){
-	text="Gem's typo v1! allows even more cursed typos if you start with num[num]";
+	text="Gem's typo v1! allows even more cursed typos if you start with typo[num], up to 10";
 	iptNum=0;
+} else {
+	const rgex=/typo(\d+)\s/;
+	let fndwrd = text.match(rgex);
+	let pos = text.search(rgex);
+	if(fndwrd!=null){
+		iptNum=fndwrd[1];
+		text = text.substr(0,pos)+text.substr(pos+fndwrd[0].length);
+	} else if(text.match(/typo(\d+)/) {
+		text = "You can't just enter a typo level without a sentence!";
+	}
 }
-
-if(iptNum>6||iptNum<0){
-	iptNum = 6;
+	
+var repeatNum = 0;
+if(iptNum>10||iptNum<0){
+	repeatNum = 4;
+} else if(iptNum > 6){
+	repeatNum = iptNum - 6;
 }
 
 var words = text.split(' ');
@@ -45,6 +46,9 @@ for(i=0;i<words.length;i++){
 			}else{
 				ltrs[j]+=ltrs[j];
 			}
+		}
+		if(j>1 && Math.random()<(.025*repeatNum)){
+			j--;
 		}
 	}
 	words[i]=ltrs.join('');
