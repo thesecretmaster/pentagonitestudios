@@ -18,7 +18,7 @@ if(text.length === 0){
 	text = "Gem's typo v1! allows even more cursed typos if you start with typo[num], up to 10";
 	iptNum = 0;
 } else {
-	const rgex = /typo(\d+)\s/;
+	const rgex = /typo(\d+)[\s,]/;
 	let fndwrd = text.match(rgex);
 	let pos = text.search(rgex);
 	if(fndwrd != null){
