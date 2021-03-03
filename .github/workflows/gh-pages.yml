@@ -48,6 +48,7 @@ jobs:
         run: for f in nb/{eyes,fish_0,fish_1,fish_off,gaboemote,gaussian,gordonramsay,LMS,test,typo_0}; do cp $f.js $f.json; done
       - name: Minify javascript
         working-directory: ${{ env.build_dir }}
+        continue-on-error: true
         run: npm run minify
         env:
           MIN_JS_DIR: ${{ env.output_dir }}/nb/
