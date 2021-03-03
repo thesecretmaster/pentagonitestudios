@@ -24,7 +24,7 @@ if(text.length==0){
 	if(fndwrd!=null){
 		iptNum=fndwrd[1];
 		text = text.substr(0,pos)+text.substr(pos+fndwrd[0].length);
-	} else if(text.match(/typo(\d+)/) {
+	} else if(text.match(/typo(\d+)/)) {
 		text = "You can't just enter a typo level without a sentence!";
 	}
 }
