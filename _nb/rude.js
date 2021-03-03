@@ -5,23 +5,24 @@ variables:
 tag: large arrays
 order: 4
 ---
-const testFor=[
-	"ugly",
-	"fat",
-	"stubborn",
-	"annoying",
-	"dumb",
-	"stupid",
-	"bossy",
-	"boring",
-	"bitchy",
-	"impatient",
-	"lazy",
-	"mean",
-	"nasty",
-	"jealous",
-	"rude",
-	"cringe",
-	"tired",
-	"mushy"
-]
+
+const testFor = [
+  'ugly',
+  'fat',
+  'stubborn',
+  'annoying',
+  'dumb',
+  'stupid',
+  'bossy',
+  'boring',
+  'bitchy',
+  'impatient',
+  'lazy',
+  'mean',
+  'nasty',
+  'jealous',
+  'rude',
+  'cringe',
+  'tired',
+  'mushy'
+];

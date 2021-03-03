@@ -8,6 +8,9 @@ variables:
 tag: functions
 order: 2
 ---
+
+/* Tell ESLint that there will be the following global variables */
+/* global text:true */
 var iptNum = 1;
 if(text.length==0){
 	text="You gotta enter a sentence to typo, silly!";
@@ -53,4 +56,4 @@ for(i=0;i<words.length;i++){
 	}
 	words[i]=ltrs.join('');
 }
-text=words.join(' ');
+text = words.join(' ');
