@@ -42,12 +42,19 @@ const volume = ['L', 'm^3', 'cm^3', 'gal', 'qt', 'pt', 'c', 'floz', 'tsp', 'Tbsp
 const accptUnits = 'current types accepted: temperature, length, volume';
 
 let val = parseFloat(cvrtvals[0]);
-if ((isNaN(val) || val <= 0) && helpTrg === 0) {
+if (isNaN(val) && helpTrg === 0) {
   helpTrg = 2;
+} else if (val <= 0) {
+  helpTrg = -1;
 }
+
 if (helpTrg !== 0) {
   /* error handling, basically */
   switch (helpTrg) {
+    case -1:
+      msg = 'You thought entering that value would be funny, did you?';
+      break;
+    
     case 2:
       msg = 'requires a value to convert from lycelIdk';
       break;
