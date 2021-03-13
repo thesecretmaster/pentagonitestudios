@@ -7,6 +7,8 @@ tag: large arrays
 order: 2
 ---
 
+/* eslint-disable no-trailing-spaces*/
+
 const LMS = ['This is a nice stick',
   'I like sticks (peck peck)',
   'Lemme Smash, please',

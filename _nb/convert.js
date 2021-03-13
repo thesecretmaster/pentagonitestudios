@@ -45,6 +45,7 @@ if (helpTrg !== 0) {
 		
 		case 3:
 		msg = 'current accepted units for temperature: ' + temperature.join(', ');
+		break;
 		
 		case default:
 		msg = 'Converter program v1 by Gem. Please enter convert in the form "[number][inputUnit] [outputUnit]" or "help [unittype]" for implemented units';
