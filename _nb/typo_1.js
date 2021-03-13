@@ -13,7 +13,7 @@ order: 2
 /* global text:true */
 
 /* These ESLint errors should be handled, but for now I just want to get it to pass */
-/* eslint-disable no-undef, prefer-const */
+/* eslint-disable prefer-const */
 
 let iptNum = 1;
 if (text.length === 0) {
@@ -43,9 +43,9 @@ if (iptNum > 10 || iptNum < 0) {
 }
 
 let words = text.split(' ');
-for (i = 0; i < words.length; i++) {
+for (let i = 0; i < words.length; i++) {
   let ltrs = words[i].split('');
-  for (j = 1; j < ltrs.length - 1; j++) {
+  for (let j = 1; j < ltrs.length - 1; j++) {
     if (Math.random() < (0.15 * iptNum)) {
       if (Math.random() < 0.7) {
         tmp = ltrs[j];
