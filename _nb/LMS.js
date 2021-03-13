@@ -6,8 +6,7 @@ variables:
 tag: large arrays
 order: 2
 ---
-/* ignore an apparent trailing space in a sentence*/
-/* eslint-disable no-trailing-spaces*/
+/* eslint-disable no-trailing-spaces */
 
 const LMS = ['This is a nice stick',
   'I like sticks (peck peck)',
