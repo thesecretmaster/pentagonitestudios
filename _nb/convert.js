@@ -1,5 +1,6 @@
 ---
-description: [WIP] requires an input string '_text_' in the form '[number][inputUnit] to [outputUnit]' or '[number][inputUnit] [outputUnit]'. this will attempt to convert the input to output.
+description: |
+  [WIP] requires an input string '_text_' in the form '[number][inputUnit] to [outputUnit]' or '[number][inputUnit] [outputUnit]'. this will attempt to convert the input to output.
 variables:
   - text
   - msg
@@ -36,20 +37,20 @@ if (helpTrg !== 0) {
 	switch (helpTrg) {
 		
 		case 1:
-		msg = 'Converter program v1 by Gem. Please enter convert in the form "[number][inputUnit] [outputUnit]" or "help [unittype]" for implemented units';
-		break;
+		  msg = 'Converter program v1 by Gem. Please enter convert in the form "[number][inputUnit] [outputUnit]" or "help [unittype]" for implemented units';
+		  break;
 		
 		case 2:
-		msg = 'requires a value to convert from lycelIdk';
-		break;
+		  msg = 'requires a value to convert from lycelIdk';
+		  break;
 		
 		case 3:
-		msg = 'current accepted units for temperature: ' + temperature.join(', ');
-		break;
+		  msg = 'current accepted units for temperature: ' + temperature.join(', ');
+		  break;
 		
 		case default:
-		msg = 'Converter program v1 by Gem. Please enter convert in the form "[number][inputUnit] [outputUnit]" or "help [unittype]" for implemented units';
-		break;
+		  msg = 'Converter program v1 by Gem. Please enter convert in the form "[number][inputUnit] [outputUnit]" or "help [unittype]" for implemented units';
+		  break;
 		
 	}
 } else {
@@ -61,39 +62,39 @@ if (helpTrg !== 0) {
 		switch (unit1) {
 			
 			case 'C':
-			break;
+			  break;
 			
 			case 'F':
-			val = (val-32)*5/9;
-			break;
+			  val = (val-32)*5/9;
+			  break;
 			
 			case 'K':
-			val = val-273.15;
-			break;
+			  val = val-273.15;
+			  break;
 			
 			default:
-			calc = false;
-			msg = 'error parsing temperature conversion, start';
-			break;
+			  calc = false;
+			  msg = 'error parsing temperature conversion, start';
+			  break;
 			
 		}
 		switch (unit2) {
 			
 			case 'C':
-			break;
+			  break;
 			
 			case 'F':
-			val = val*1.8+32;
-			break;
+			  val = val*1.8+32;
+			  break;
 			
 			case 'K':
-			val = val+273.15;
-			break;
+			  val = val+273.15;
+			  break;
 			
 			default:
-			calc = false;
-			msg = 'error parsing temperature conversion, end';
-			break;
+			  calc = false;
+			  msg = 'error parsing temperature conversion, end';
+			  break;
 			
 		}
 	} else {
