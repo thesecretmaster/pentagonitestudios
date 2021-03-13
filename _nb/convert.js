@@ -42,7 +42,7 @@ const volume = ['L', 'm^3', 'cm^3', 'gal', 'qt', 'pt', 'c', 'floz', 'tsp', 'Tbsp
 const accptUnits = 'current types accepted: temperature, length, volume';
 
 let val = parseFloat(cvrtvals[0]);
-if (isNaN(val) && helpTrg === 0) {
+if ((isNaN(val) || val <= 0) && helpTrg === 0) {
   helpTrg = 2;
 }
 if (helpTrg !== 0) {
@@ -69,8 +69,8 @@ if (helpTrg !== 0) {
       break;
   }
 } else {
-  const unit1 = cvrtvals[0].replace(/\d/g, '');
-  const unit2 = cvrtvals[1].replace(/\d/g, '');
+  const unit1 = cvrtvals[0].replace(/\b[\d\.]*/, '');
+  const unit2 = cvrtvals[1].replace(/\b[\d\.]*/, '');
   let calc = true;
   const gaboVal = 1.8288;
   if (temperature.includes(unit1) && temperature.includes(unit2)) {
