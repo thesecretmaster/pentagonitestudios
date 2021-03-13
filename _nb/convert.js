@@ -6,7 +6,7 @@ variables:
   - val
   - helpTrg
 tag: functions
-order: 1
+order: 4
 ---
 /* These ESLint errors should be handled, but for now I just want to get it to pass */
 /* eslint-disable no-tabs*/
