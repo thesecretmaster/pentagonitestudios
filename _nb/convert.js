@@ -14,9 +14,10 @@ variables:
 tag: functions
 order: 4
 ---
+/* global text */
 
 /* whitespace issues */
-/* eslint-disable no-tabs, indent */
+/* eslint-disable no-tabs, indent, no-unused-expressions */
 
 let msg;
 let helpTrg = 0;
@@ -428,10 +429,9 @@ if (helpTrg !== 0) {
     msg = 'Either unit types do not match or it has yet to be implemented smolShrug | ' + accptUnits + ' | debug: val-' + val + ' unit1-' + unit1 + ' unit2-' + unit2;
   }
 
-  /* optionally can use toPrecision() on val for more/less digits */
   if (calc) {
-    msg = origVal + unit1 + ' = ' + val + unit2;
-  }    
+    msg = origVal + unit1 + ' = ' + val.toPrecision(6) + unit2;
+  }
 }
 
 msg;
