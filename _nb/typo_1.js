@@ -1,5 +1,5 @@
 ---
-description: same as the typo algo above but allows some control of level of typos made if the sentence starts with "typo[number]", up to 10.
+description: same as the typo algo above but allows some control of level of typos made if the sentence contains "typo[number]", up to 10.
 variables:
   - text
   - words
