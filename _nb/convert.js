@@ -15,7 +15,7 @@ tag: functions
 order: 4
 ---
 
-/* These ESLint errors should be handled, but for now I just want to get it to pass */
+/* whitespace issues */
 /* eslint-disable no-tabs, indent */
 
 let msg;
@@ -84,8 +84,8 @@ if (helpTrg !== 0) {
       break;
   }
 } else {
-  let unit1 = cvrtvals[0].replace(/\b[\d\.]*/, '');
-  let unit2 = cvrtvals[1].replace(/\b[\d\.]*/, '');
+  let unit1 = cvrtvals[0].replace(/\b[\d.]*|\b\-/, '');
+  let unit2 = cvrtvals[1].replace(/\b[\d.]*|\b\-/, '');
   let calc = true;
   const origVal = val;
   const gaboVal = 1.8288;
@@ -95,7 +95,7 @@ if (helpTrg !== 0) {
         break;
 
       case 'F':
-        val = (val-32) * 5 / 9;
+        val = (val - 32) * 5 / 9;
         break;
 
       case 'K':
