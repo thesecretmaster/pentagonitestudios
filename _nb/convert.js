@@ -251,10 +251,10 @@ if (helpTrg !== 0) {
       }
     };
   })();
-  if (conversions.temperature.keys().includes(unit1) && conversions.temperature.keys().includes(unit2)) {
+  if (conversions.temperature.hasOwnProperty(unit1) && conversions.temperature.hasOwnProperty(unit2)) {
     val = conversions.temperature[unit1].from(val);
     val = conversions.temperature[unit2].to(val);
-  } else if (conversions.length.keys().includes(unit1) && conversions.length.keys().includes(unit2)) {
+  } else if (conversions.length.hasOwnProperty(unit1) && conversions.length.hasOwnProperty(unit2)) {
     val = conversions.length[unit1].from(val);
     if (conversions.length[unit1].suffix !== undefined) {
       unit1 = conversions.length[unit1].suffix;
@@ -263,7 +263,7 @@ if (helpTrg !== 0) {
     if (conversions.length[unit2].suffix !== undefined) {
       unit2 = conversions.length[unit2].suffix;
     }
-  } else if (conversions.volume.keys().includes(unit1) && conversions.volume.keys().includes(unit2)) {
+  } else if (conversions.volume.hasOwnProperty(unit1) && conversions.volume.hasOwnProperty(unit2)) {
     val = conversions.volume[unit1].from(val);
     if (conversions.volume[unit1].suffix !== undefined) {
       unit1 = conversions.volume[unit1].suffix;
@@ -272,7 +272,7 @@ if (helpTrg !== 0) {
     if (conversions.volume[unit2].suffix !== undefined) {
       unit2 = conversions.volume[unit2].suffix;
     }
-  } else if (conversions.massweight.keys().includes(unit1) && conversions.massweight.keys().includes(unit2)) {
+  } else if (conversions.massweight.hasOwnProperty(unit1) && conversions.massweight.hasOwnProperty(unit2)) {
     val = conversions.massweight[unit1].from(val);
     if (conversions.massweight[unit1].suffix !== undefined) {
       unit1 = conversions.massweight[unit1].suffix;
@@ -281,7 +281,7 @@ if (helpTrg !== 0) {
     if (conversions.massweight[unit2].suffix !== undefined) {
       unit2 = conversions.massweight[unit2].suffix;
     }
-  } else if (conversions.area.keys().includes(unit1) && conversions.area.keys().includes(unit2)) {
+  } else if (conversions.area.hasOwnProperty(unit1) && conversions.area.hasOwnProperty(unit2)) {
     val = conversions.area[unit1].from(val);
     if (conversions.area[unit1].suffix !== undefined) {
       unit1 = conversions.area[unit1].suffix;
