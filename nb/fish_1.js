@@ -9,7 +9,7 @@ while (gaus > 25 || gaus < -4.5) {
   while (v === 0) v = Math.random();
   gaus = Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
   gaus = gaus * 2.5;
-
+}
 const fsh = 5 + gaus;
 const msg = ['Teeny fish! lycelGib ',
   'Oh, I caught one lycelWhatif ',
